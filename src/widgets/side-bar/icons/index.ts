@@ -1,0 +1,7 @@
+export {ExploreIcon} from './ExploreIcon'
+export {HomePageIcon} from './HomePageIcon'
+export {MoonIcon} from './MoonIcon'
+export {MyTripsIcon} from './MyTripsIcon'
+export {ShareIcon} from './ShareIcon'
+export {SunIcon} from './SunIcon'
+export {TripsterIcon} from './TripsterIcon'

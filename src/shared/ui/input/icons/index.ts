@@ -1,0 +1,1 @@
+export {LensIcon} from './LensIcon'

@@ -1,4 +1,4 @@
-import {TripsterIcon} from "../../../icons/TripsterIcon.tsx";
+import {TripsterIcon} from "../../../icons";
 import {Link} from "react-router-dom";
 
 export const AppLogo = () => {

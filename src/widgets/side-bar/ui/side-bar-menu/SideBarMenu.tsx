@@ -1,10 +1,10 @@
 import {NavLink} from 'react-router-dom'
-import {sidebarMenuItems} from "../../../../app/providers/router/router.tsx";
-import {ShareIcon} from "../../icons/ShareIcon.tsx";
+import {ShareIcon} from "../../icons";
+import {sidebarMenuItems} from "../../model/menuItems.ts";
 
 export const SideBarMenu = () => {
     return (
-        <>
+        <aside>
             <ul>
                 {sidebarMenuItems.map(({path, label, icon: Icon}) => (
                     <li key={path}>
@@ -19,9 +19,7 @@ export const SideBarMenu = () => {
                 <ShareIcon/>
                 <p>Share</p>
             </div>
-
-        </>
-
+        </aside>
     );
 };
 

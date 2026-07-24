@@ -1,5 +1,5 @@
-import {SunIcon} from "../../../icons/SunIcon.tsx";
-import {MoonIcon} from "../../../icons/MoonIcon.tsx";
+import {SunIcon} from "../../../icons";
+import {MoonIcon} from "../../../icons";
 
 type Theme = 'light' | 'dark'
 

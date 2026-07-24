@@ -1,5 +1,5 @@
-import {AppLogo} from "./app-logo/AppLogo.tsx";
-import {ThemeController} from "./theme-controller/ThemeController.tsx";
+import {AppLogo} from "./app-logo";
+import {ThemeController} from "./theme-controller";
 import {useState} from "react";
 
 export const SideBarHeader = () => {

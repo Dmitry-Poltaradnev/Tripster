@@ -1,13 +1,16 @@
 import s from './Input.module.scss';
-import {LensIcon} from "./icons/LensIcon.tsx";
+import type {ReactNode} from "react";
 
-export const Input = () => {
+type InputProps = {
+    placeholder: string
+    icon?: ReactNode
+}
+
+export const Input = ({placeholder, icon}: InputProps) => {
     return (
         <div className={s.input}>
-            <span>
-                <LensIcon/>
-            </span>
-            <input placeholder={'Search countries...'} type="text"/>
+            {icon ? <span>{icon}</span> : null}
+            <input placeholder={placeholder} type="text"/>
         </div>
     );
 };
