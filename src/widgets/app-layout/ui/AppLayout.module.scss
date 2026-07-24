@@ -1,0 +1,18 @@
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  background: var(--color-bg-primary);
+}
+
+.sidebar {
+  min-width: 0;
+  border-right: 1px solid var(--color-border);
+  background: var(--color-bg-sidebar);
+}
+
+.content {
+  min-width: 0;
+  padding: 32px;
+  overflow-x: hidden;
+}
