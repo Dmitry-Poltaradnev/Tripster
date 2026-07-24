@@ -3,8 +3,8 @@ import type {SVGProps} from 'react'
 type TripsterIconProps = SVGProps<SVGSVGElement>
 
 export const TripsterIcon = ({
-                                 width = 28,
-                                 height = 28,
+                                 width = 32,
+                                 height = 32,
                                  ...props
                              }: TripsterIconProps) => {
     return (

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -66,6 +68,7 @@
         --color-border: rgba(124, 111, 255, 0.18);
         --color-bg-sidebar: #17143a;
         --color-bg-primary: #0f0d2a;
+        --color-bg-secondary: #1e1a47;
         --color-text-primary: #ede8ff;
         --color-text-secondary: #9590be;
 
@@ -73,5 +76,10 @@
         --font-size-main: 14px;
         --font-size-medium: 16px;
         --font-size-large: 18px;
+
+        --font-family: 'Barlow', sans-serif;
+        --second-family: 'Inter', sans-serif;
+        --third-family: 'Barlow Condensed', sans-serif;
+        --font3: 'JetBrains Mono', sans-serif;
     }
 }

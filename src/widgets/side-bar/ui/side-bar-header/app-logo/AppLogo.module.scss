@@ -1,0 +1,14 @@
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoTitle {
+  font-family: var(--third-family), serif;
+  font-weight: 700;
+  font-size: var(--font-size-large);
+  line-height: 150%;
+  color: var(--color-text-primary);
+  letter-spacing: 0.01em;
+}

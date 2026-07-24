@@ -1,4 +1,6 @@
 import {SunIcon, MoonIcon} from "@/widgets/side-bar/icons"
+import s from './ThemeController.module.scss'
+import clsx from "clsx";
 
 type Theme = 'light' | 'dark'
 
@@ -16,8 +18,8 @@ export const ThemeController = ({
                                     changeTheme,
                                 }: ThemeControllerProps) => {
     return (
-        <div role="group" aria-label="Select theme">
-            <button
+        <div className={s.themeControllerWrapper} role="group" aria-label="Select theme">
+            <button className={clsx(s.themeButton, value === 'light' && s.active)}
                 type="button"
                 aria-pressed={value === 'light'}
                 onClick={() => {
@@ -25,10 +27,10 @@ export const ThemeController = ({
                     themeLogger('light')
                 }}
             >
-                <SunIcon/>
+                <SunIcon color="#9590be" />
             </button>
 
-            <button
+            <button className={clsx(s.themeButton, value === 'dark' && s.active)}
                 type="button"
                 aria-pressed={value === 'dark'}
                 onClick={() => {
@@ -36,7 +38,7 @@ export const ThemeController = ({
                     themeLogger('dark')
                 }}
             >
-                <MoonIcon/>
+                <MoonIcon color="#9590be" />
             </button>
         </div>
     )

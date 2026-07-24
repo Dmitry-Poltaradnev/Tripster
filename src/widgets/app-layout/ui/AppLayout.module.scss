@@ -1,8 +1,21 @@
-.layout {
+.page {
   min-height: 100vh;
+  position: relative;
+  background: linear-gradient(
+          to right,
+          var(--color-bg-sidebar) 0,
+          var(--color-bg-sidebar) calc((100vw - 1240px) / 2 + 240px),
+          var(--color-bg-primary) calc((100vw - 1240px) / 2 + 240px),
+          var(--color-bg-primary) 100%
+  );
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 1240px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr);
-  background: var(--color-bg-primary);
 }
 
 .sidebar {
@@ -15,4 +28,5 @@
   min-width: 0;
   padding: 32px;
   overflow-x: hidden;
+  background: var(--color-bg-primary);
 }
