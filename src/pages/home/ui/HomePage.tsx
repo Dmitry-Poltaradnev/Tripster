@@ -1,5 +1,5 @@
-import {Input} from "@/shared/ui/input/Input.tsx";
 import {LensIcon} from "@/shared/ui/input/icons";
+import {Input} from "@/shared/ui/input";
 
 export const HomePage = () => {
     return (

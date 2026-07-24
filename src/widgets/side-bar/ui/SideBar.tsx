@@ -1,5 +1,5 @@
-import {SideBarHeader} from "./side-bar-header/SideBarHeader.tsx";
-import {SideBarMenu} from "./side-bar-menu/SideBarMenu.tsx";
+import {SideBarHeader} from "./side-bar-header";
+import {SideBarMenu} from "./side-bar-menu";
 
 export const SideBar = () => {
     return (

@@ -1,5 +1,4 @@
-import {SunIcon} from "../../../icons";
-import {MoonIcon} from "../../../icons";
+import {SunIcon, MoonIcon} from "@/widgets/side-bar/icons"
 
 type Theme = 'light' | 'dark'
 
