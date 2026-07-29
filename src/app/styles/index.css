@@ -66,11 +66,14 @@
 
     :root {
         --color-border: rgba(124, 111, 255, 0.18);
+        --color-white : #ffffff;
         --color-bg-sidebar: #17143a;
         --color-bg-primary: #0f0d2a;
         --color-bg-secondary: #1e1a47;
         --color-text-primary: #ede8ff;
         --color-text-secondary: #9590be;
+
+        --color-bg-accent: #7C6FFF;
 
         --font-size-small: 12px;
         --font-size-main: 14px;

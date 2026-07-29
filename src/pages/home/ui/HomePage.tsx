@@ -5,6 +5,7 @@ import s from './HomePage.module.scss'
 export const HomePage = () => {
     return (
         <div className={s.homePageBody}>
+            <p>Good morning</p>
             <p>Where to next?</p>
             <Input placeholder={'Search countries...'} icon={<LensIcon/>}/>
         </div>

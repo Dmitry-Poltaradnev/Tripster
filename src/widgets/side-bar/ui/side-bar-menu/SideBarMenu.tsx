@@ -2,24 +2,32 @@ import {NavLink} from 'react-router-dom'
 import {ShareIcon} from "../../icons";
 import {sidebarMenuItems} from "../../model/menuItems.ts";
 import s from './SideBarMenu.module.scss'
+import clsx from "clsx";
 
 export const SideBarMenu = () => {
     return (
         <>
-            <ul>
+            <ul className={s.menuList}>
                 {sidebarMenuItems.map(({path, label, icon: Icon}) => (
-                    <li className={s.menuItemTitle} key={path}>
-                        <NavLink to={path}>
-                            <Icon/>
-                            {label}
+                    <li key={path}>
+                        <NavLink
+                            to={path}
+                            className={({isActive}) =>
+                                clsx(s.menuItem, isActive && s.active)
+                            }
+                        >
+                            <span><Icon/></span>
+                            <span>{label}</span>
                         </NavLink>
                     </li>
                 ))}
             </ul>
-            <div>
-                <ShareIcon/>
-                <p>Share</p>
-            </div>
+            <button className={s.menuItem}>
+                <span>
+                    <ShareIcon/>
+                </span>
+                <span>Share</span>
+            </button>
         </>
     );
 };

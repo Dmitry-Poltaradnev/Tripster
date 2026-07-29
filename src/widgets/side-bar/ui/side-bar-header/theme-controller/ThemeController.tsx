@@ -27,7 +27,7 @@ export const ThemeController = ({
                     themeLogger('light')
                 }}
             >
-                <SunIcon color="#9590be" />
+                <SunIcon/>
             </button>
 
             <button className={clsx(s.themeButton, value === 'dark' && s.active)}
@@ -38,7 +38,7 @@ export const ThemeController = ({
                     themeLogger('dark')
                 }}
             >
-                <MoonIcon color="#9590be" />
+                <MoonIcon/>
             </button>
         </div>
     )
