@@ -1,3 +1,15 @@
 .homePageBody {
   background-color: var(--color-bg-primary);
+  color: var(--color-white);
+}
+
+.homePageSubTitle {
+  color: var(--color-text-secondary);
+}
+
+.homePageTitle {
+  font-family: var(--third-family), serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
 }

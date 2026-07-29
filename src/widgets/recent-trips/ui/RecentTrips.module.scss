@@ -1,0 +1,20 @@
+.recentTripsTitle {
+  font-family: var(--third-family), serif;
+  font-weight: var(--font-weight-medium-pl);
+  font-size: var(--font-size-large);
+  line-height: 150%;
+  color: var(--color-text-primary);
+}
+
+.recentTripsButton {
+  font-family: var(--font-family), sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-main);
+  color: var(--color-bg-accent);
+}
+
+.recentTripsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

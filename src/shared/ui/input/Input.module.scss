@@ -1,7 +1,23 @@
-.input {
-  max-width: 200px;
-  border-radius: 5px;
-  border: 1px solid rgba(124, 111, 255, 0.18);
+.inputWrapper {
+  max-width: 100%;
+  border-radius: 20px;
+  border: 2px solid var(--color-border);
   display: flex;
   justify-content: space-between;
+  margin: 20px 0;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: var(--font-size-medium);
+  background: none;
+}
+
+.iconInput {
+  margin: 0 16px;
+  color: var(--color-bg-accent);
 }

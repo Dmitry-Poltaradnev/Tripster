@@ -1,0 +1,15 @@
+.tripCardWrapper {
+  border: 2px solid var(--color-border);
+  border-radius: 15px;
+  width: 240px;
+  height: 146px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.tripCardFooter {
+  background-color: var(--color-bg-sidebar);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}

@@ -1,7 +1,7 @@
 import {Outlet} from 'react-router-dom'
 import {SideBar} from '@/widgets/side-bar'
-
 import s from './AppLayout.module.scss'
+
 
 export function AppLayout() {
     return (
