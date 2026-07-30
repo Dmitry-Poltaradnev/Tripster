@@ -5,29 +5,30 @@ import {AllTripsPage} from "@/pages/all-trips";
 import {MyTripsPage} from "@/pages/my-trips";
 import {AppLayout} from "@/widgets/app-layout";
 import {HomePage} from "@/pages/home";
+import {ROUTES} from "@/shared/config/routes.ts";
 
 export const router = createBrowserRouter([
     {
         element: <AppLayout/>,
         children: [
             {
-                path: "/",
+                path: ROUTES.home,
                 element: <HomePage/>
             },
             {
-                path: "/explore",
+                path: ROUTES.explore,
                 element: <ExplorePage/>
             },
             {
-                path: "/country/:id",
+                path: ROUTES.country,
                 element: <CountryDetailsPage/>
             },
             {
-                path: "/trips",
+                path: ROUTES.trips,
                 element: <AllTripsPage/>
             },
             {
-                path: "/my-trips",
+                path: ROUTES.myTrips,
                 element: <MyTripsPage/>
             }
         ]

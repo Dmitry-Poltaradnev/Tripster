@@ -1,5 +1,5 @@
 import s from './RecentTrips.module.scss';
-import {TripCard} from "@/entities/trip-card/TripCard.tsx";
+import {TripCard} from "@/entities/trip-card/ui/TripCard.tsx";
 import {CreateTripCard} from "@/features/create-trip/ui/CreateTripCard.tsx";
 
 export const RecentTrips = () => {

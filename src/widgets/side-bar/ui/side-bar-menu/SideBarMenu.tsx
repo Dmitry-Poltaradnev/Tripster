@@ -12,6 +12,7 @@ export const SideBarMenu = () => {
                     <li key={path}>
                         <NavLink
                             to={path}
+                            end={path === '/'}
                             className={({isActive}) =>
                                 clsx(s.menuItem, isActive && s.active)
                             }
