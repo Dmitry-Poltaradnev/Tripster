@@ -1,0 +1,34 @@
+.createTripCardWrapper {
+  border: 2px dashed var(--color-border);
+  border-radius: 16px;
+  width: 144px;
+  height: 140px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.plusIconWrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(45, 212, 191, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.createTripCardText {
+  font-family: var(--font-family), sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-small);
+  line-height: 133%;
+  color: var(--color-text-secondary);
+}
+
+.plusIcon {
+  color: #2DD4BF;
+}

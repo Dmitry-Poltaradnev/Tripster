@@ -8,8 +8,46 @@
   justify-content: end;
 }
 
+.tripCardInfo {
+  padding: 0 0 15px 15px;
+}
+
 .tripCardFooter {
   background-color: var(--color-bg-sidebar);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
 }
+
+.tripCardTitle {
+  font-family: var(--third-family) serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-main);
+  color: var(--color-white);
+}
+
+.tripCardDates {
+  font-family: var(--font-family) sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-small);
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.tripCardDescription {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tripCardDescription p {
+  font-family: var(--font-family), sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-main);
+  line-height: 133%;
+  color: var(--color-text-secondary);
+}
+
