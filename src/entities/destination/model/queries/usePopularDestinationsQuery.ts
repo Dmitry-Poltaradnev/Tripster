@@ -1,22 +1,28 @@
 import {useQuery} from "@tanstack/react-query";
-import {getPopularCountries} from "@/entities/destination/api/destinationApi.ts";
+import {type DestinationType, getPopularCountries} from "@/entities/destination/api/destinationApi.ts";
+import {getDestinationImage} from "@/entities/destination/api/imageApi.ts";
 
 export const usePopularDestinationsQuery = () => {
-    return useQuery({
+    return useQuery<DestinationType[]>({
         queryKey: ['popular-destinations'],
         queryFn: async () => {
-            const response = await getPopularCountries('Canada');
+            const countries = await Promise.all([
+                getPopularCountries(),
+                getPopularCountries(),
+                getPopularCountries(),
+                getPopularCountries(),
+            ]);
 
-            console.log('Fetched countries:', response.data);
-            if (!response.success || !Array.isArray(response.data)) {
-                throw new Error(response.errors?.[0]?.message || 'Failed to fetch countries');
-            }
-            return response.data.map((country: any) => ({
-                id: country.cca3,
-                name: country.name?.common,
-                flag: country.flags?.svg,
-                region: country.region,
-            }));
-        }
+            return await Promise.all(
+                countries.map(async (country) => {
+                    const imageResp = await getDestinationImage(country.name)
+
+                    return {
+                        ...country,
+                        imageUrl: imageResp.photos?.[0]?.src?.medium,
+                    }
+                })
+            )
+        },
     });
 };

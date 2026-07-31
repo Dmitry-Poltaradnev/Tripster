@@ -1,20 +1,31 @@
 import s from './PopularDestinationCard.module.scss';
+import type {DestinationType} from "@/entities/destination/api/destinationApi.ts";
 
-// export type PopularDestinationCardProps = {
-//     country?: string;
-//     pathOfTheWorld?: string;
-//     imageUrl?: string;
-// }
+type PopularDestination = DestinationType & {
+    imageUrl?: string;
+};
 
-export const PopularDestinationCard = ({country, pathOfTheWorld, imageUrl}: any) => {
+type PopularDestinationCardProps = {
+    destination: PopularDestination;
+}
+
+export const PopularDestinationCard = ({destination}: PopularDestinationCardProps) => {
+
+    const {flags, subregion, name, imageUrl} = destination
+
     return (
-        <div className={s.popularDestinationCard}>
-            <div className={s.cardImage}>
-                {imageUrl ? <img src={imageUrl} alt={country}/> : <span>Image</span>}
-            </div>
+        <div className={s.popularDestinationCard} style={imageUrl ? {
+            backgroundImage: `url(${imageUrl})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+        } : undefined}>
+            <span className={s.cardImage}>
+                {flags ? <img src={flags.svg} alt={name}/> : <span>Flag</span>}
+            </span>
             <div className={s.cardInfo}>
-                <p className={s.countryTitle}>{country}</p>
-                <p className={s.pathOfTheWorldTitle}>{pathOfTheWorld}</p>
+                <p className={s.countryTitle}>{name}</p>
+                <p className={s.pathOfTheWorldTitle}>{subregion}</p>
             </div>
         </div>
     );

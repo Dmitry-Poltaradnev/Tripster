@@ -1,18 +1,46 @@
-const API_KEY = import.meta.env.VITE_REST_COUNTRIES_API_KEY;
+export type CurrenciesType = {
+    "code": string,
+    "name": string,
+    "symbol": string
+}
 
-export const getPopularCountries = async (name: string) => {
+export type LanguagesType = {
+    "iso639_1": string,
+    "name": string
+}
+
+export type FlagsType = {
+    svg: string,
+    png: string
+}
+
+export type DestinationType = {
+    "name": string,
+    "alpha2Code": string,
+    "alpha3Code": string,
+    "capital": string,
+    "region": string,
+    "subregion": string,
+    "population": number,
+    "area": number,
+    "currencies": CurrenciesType[],
+    "languages": LanguagesType[],
+    "callingCodes": string[],
+    "topLevelDomain": string[],
+    "borders": string[],
+    "flags": FlagsType
+};
+
+
+export const getPopularCountries = async () => {
     const response = await fetch(
-        `/api/countries/countries/v5/names.common/${name}`,
-        {
-            headers: {
-                Authorization: `Bearer ${API_KEY}`,
-            },
-        }
+        `https://countries.dev/random`,
     );
 
     if (!response.ok) {
         throw new Error('Failed to fetch country');
     }
 
-    return response.json();
+    const data: DestinationType = await response.json();
+    return data;
 };

@@ -1,13 +1,22 @@
 .popularDestinationCard {
-
+  width: 234px;
+  height: 274px;
+  border-radius: 15px;
+  border: 2px solid var(--color-border);
+  padding: 12px 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .countryTitle {
-  font-family: var(--third-family), serif;
+  font-family: var(--third-family), sans-serif;
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-main);
   line-height: 125%;
   color: var(--color-white);
+  letter-spacing: 1.3px;
+  text-align: center;
 }
 
 .pathOfTheWorldTitle {
@@ -16,9 +25,16 @@
   font-size: var(--font-size-small);
   line-height: 150%;
   color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.1px;
+  text-align: center;
 }
 
 .cardImage {
-  width: 18px;
-  height: 27px;
+  width: 50px;
+  align-self: flex-end;
+}
+
+.imageBack {
+  width: 100px;
+  height: 100px;
 }

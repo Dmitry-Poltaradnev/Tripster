@@ -11,9 +11,11 @@ export const PopularDestinations = () => {
             <p className={s.title}>Popular Destinations</p>
             {isLoading && <p>Loading...</p>}
             {isError && <p>Error loading popular destinations.</p>}
-            {data?.map((destination: any) => (
-                <PopularDestinationCard key={destination.id} destination={destination}/>
-            ))}
+            <div className={s.destinationCardsWrapper}>
+                {data?.map((destination: any, index: any) => (
+                    <PopularDestinationCard key={index} destination={destination}/>
+                ))}
+            </div>
         </div>
     );
 };
