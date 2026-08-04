@@ -1,0 +1,36 @@
+import type {SVGProps} from 'react'
+
+export const CurrencyIcon = ({
+                                 width = 18,
+                                 height = 18,
+                                 ...props
+                             }: SVGProps<SVGSVGElement>) => {
+    return (
+        <svg width={width}
+             height={height}
+             viewBox="0 0 12 12"
+             fill="none"
+             {...props}>
+            <path d="M6 1V11" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
+            <path
+                d="M8.5 2.5H4.75C4.28587 2.5 3.84075 2.68437 3.51256 3.01256C3.18437 3.34075 3 3.78587 3 4.25C3 4.71413 3.18437 5.15925 3.51256 5.48744C3.84075 5.81563 4.28587 6 4.75 6H7.25C7.71413 6 8.15925 6.18437 8.48744 6.51256C8.81563 6.84075 9 7.28587 9 7.75C9 8.21413 8.81563 8.65925 8.48744 8.98744C8.15925 9.31563 7.71413 9.5 7.25 9.5H3"
+                stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

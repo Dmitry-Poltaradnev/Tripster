@@ -1,0 +1,11 @@
+.countryDetails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.purpleIcon {
+  color: var(--color-bg-accent);
+}

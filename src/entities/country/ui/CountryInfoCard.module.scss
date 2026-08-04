@@ -1,0 +1,32 @@
+.headerCard {
+  display: flex;
+  justify-content: start;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.countryInfoCard {
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 12px;
+  width: 418px;
+  min-height: 68px;
+  background: var(--color-bg-transparent);
+  margin: 5px;
+}
+
+.dataTitle {
+  font-family: var(--font-family), sans-serif;
+  font-weight: var(--font-weight-medium-pl);
+  font-size: var(--font-size-main);
+  line-height: 143%;
+  color: var(--color-text-primary);
+}
+
+.title {
+  font-family: var(--font-family), sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-small);
+  line-height: 150%;
+  color: var(--color-text-secondary);
+}

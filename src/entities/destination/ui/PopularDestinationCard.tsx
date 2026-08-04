@@ -1,11 +1,12 @@
 import s from './PopularDestinationCard.module.scss';
 import type {DestinationType} from "@/entities/destination/api/destinationApi.ts";
+import {NavLink} from "react-router-dom";
 
-type PopularDestination = DestinationType & {
+export type PopularDestination = DestinationType & {
     imageUrl?: string;
 };
 
-type PopularDestinationCardProps = {
+export type PopularDestinationCardProps = {
     destination: PopularDestination;
 }
 
@@ -14,7 +15,7 @@ export const PopularDestinationCard = ({destination}: PopularDestinationCardProp
     const {flags, subregion, name, imageUrl} = destination
 
     return (
-        <div className={s.popularDestinationCard} style={imageUrl ? {
+        <NavLink to={`/country/${'Israel'}`} className={s.popularDestinationCard} style={imageUrl ? {
             backgroundImage: `url(${imageUrl})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -27,7 +28,7 @@ export const PopularDestinationCard = ({destination}: PopularDestinationCardProp
                 <p className={s.countryTitle}>{name}</p>
                 <p className={s.pathOfTheWorldTitle}>{subregion}</p>
             </div>
-        </div>
+        </NavLink>
     );
 };
 
