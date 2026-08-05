@@ -1,19 +1,15 @@
-.countryForecastTitle {
+.borderCountriesSectionTitle {
   font-family: var(--font-family), sans-serif;
   font-weight: var(--font-weight-medium-pl);
   font-size: var(--font-size-main);
+  color: var(--color-text-secondary);
   line-height: 133%;
   letter-spacing: 0.1em;
-  color: var(--color-text-secondary);
   margin-bottom: 20px;
 }
 
-.countryForecast {
-  margin: 30px;
-}
-
-.forecastCardsContainer {
+.borderCountriesList {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 8px;
 }

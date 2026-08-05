@@ -1,0 +1,37 @@
+.ForecastDayCard {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-transparent);
+  border-radius: 15px;
+  padding: 12px;
+  width: 52px;
+  height: 107px;
+  min-width: 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-family: var(--font-family), serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-small);
+  line-height: 150%;
+  color: var(--color-text-secondary);
+}
+
+.maxTemp {
+  font-family: var(--font-family), serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-main);
+  line-height: 133%;
+  color: var(--color-text-primary);
+}
+
+.minTemp {
+  font-family: var(--font-family), serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-small);
+  line-height: 150%;
+  color: var(--color-text-primary);
+}

@@ -1,7 +1,7 @@
 import s from './CountryForecast.module.scss';
 import {ForecastDayCard} from "@/entities/weather/ui/ForecastDayCard.tsx";
 import type {CountryDetailsData} from "@/entities/country/model/queries/useCountryDetailsQuery.ts";
-import {getWeatherForecast} from "@/entities/weather/api/weatherApi.ts";
+import {useCountryWeatherQuery} from "@/entities/weather/model/queries/useCountryWeatherQuery.ts";
 
 type CountryForecastProps = {
     countryDetails: CountryDetailsData
@@ -11,13 +11,22 @@ export const CountryForecast = ({countryDetails}: CountryForecastProps) => {
 
     const {country} = countryDetails;
 
-    const res = getWeatherForecast(country.name);
-    console.log(res)
+    const res = useCountryWeatherQuery(country.capital);
+
+    const {data, isLoading, isError} = res;
 
     return (
         <div className={s.countryForecast}>
             <p className={s.countryForecastTitle}>{`7-DAY FORECAST · ${country.name}`}</p>
-            <ForecastDayCard/>
+            {isLoading && <p>Loading...</p>}
+            {isError && <p>Error loading weather forecast.</p>}
+            {data && (
+                <div className={s.forecastCardsContainer}>
+                    {data.daily.time.map((_: any, index: number) => (
+                        <ForecastDayCard key={index} day={data.daily} index={index}/>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };

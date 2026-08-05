@@ -3,6 +3,7 @@ import {CountryMetaSection} from "@/widgets/country-details/ui/CountryMetaSectio
 import {useCountryDetailsQuery} from "@/entities/country/model/queries/useCountryDetailsQuery.ts";
 import {CountryDetails} from "@/widgets/country-details/ui/CountryDetails.tsx";
 import {CountryForecast} from "@/widgets/country-forecast/ui/CountryForecast.tsx";
+import {BorderCountriesSection} from "@/widgets/country-details/ui/BorderCountriesSection.tsx";
 
 export const CountryDetailsPage = () => {
 
@@ -17,6 +18,7 @@ export const CountryDetailsPage = () => {
                     <CountryMetaSection country={data}/>
                     <CountryDetails countryDetails={data}/>
                     <CountryForecast countryDetails={data}/>
+                    <BorderCountriesSection countryDetails={data}/>
                 </>
             )}
         </div>

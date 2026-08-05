@@ -11,6 +11,7 @@ export const SunIcon = ({
             height={height}
             viewBox="0 0 16 16"
             fill="none"
+            color="#ffb900"
             {...props}
         >
             <path
