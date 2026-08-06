@@ -12,6 +12,10 @@ export const CountryDetails = ({countryDetails}: CountryDetailsProps) => {
 
     const {country} = countryDetails;
 
+    const formatPopulation = (population: number): string => {
+        return `${(population / 1_000_000).toFixed(1)}M`
+    }
+
     return (
         <div className={s.countryDetails}>
             <CountryInfoCard dataTitle={country.capital} title="Capital"
@@ -20,7 +24,7 @@ export const CountryDetails = ({countryDetails}: CountryDetailsProps) => {
                              icon={<CurrencyIcon className={s.purpleIcon}/>}/>
             <CountryInfoCard dataTitle={country.languages} title="Languages"
                              icon={<LanguagesIcon className={s.purpleIcon}/>}/>
-            <CountryInfoCard dataTitle={country.population} title="Population"
+            <CountryInfoCard dataTitle={formatPopulation(country.population)} title="Population"
                              icon={<PopulationIcon className={s.purpleIcon}/>}/>
         </div>
     );

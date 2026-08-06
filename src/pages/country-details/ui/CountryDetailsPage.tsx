@@ -16,9 +16,11 @@ export const CountryDetailsPage = () => {
             {data && (
                 <>
                     <CountryMetaSection country={data}/>
-                    <CountryDetails countryDetails={data}/>
-                    <CountryForecast countryDetails={data}/>
-                    <BorderCountriesSection countryDetails={data}/>
+                    <div className={s.countryInfoWrapper}>
+                        <CountryDetails countryDetails={data}/>
+                        <CountryForecast countryDetails={data}/>
+                        <BorderCountriesSection countryDetails={data.country}/>
+                    </div>
                 </>
             )}
         </div>

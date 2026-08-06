@@ -4,10 +4,10 @@
   border-radius: 20px;
   padding: 6px 12px;
   min-width: 81px;
-  height: 34px;
+  height: 40px;
   display: flex;
   justify-content: space-between;
-  gap: 5px;
+  gap: 8px;
   align-items: center;
 }
 
@@ -17,4 +17,8 @@
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-main);
   line-height: 143%;
+}
+
+.borderCountryCardFlag {
+  width: 20px;
 }

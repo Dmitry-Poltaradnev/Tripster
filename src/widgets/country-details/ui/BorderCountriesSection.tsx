@@ -1,31 +1,33 @@
 import s from './BorderCountriesSection.module.scss';
 import {BorderCountryCard} from "@/entities/country/ui/BorderCountryCard.tsx";
-import type {CountryDetailsData} from "@/entities/country/model/queries/useCountryDetailsQuery.ts";
-import {useCountryBordersQuery} from "@/entities/country/model/queries/useCountryBordersQuery.ts";
-
+import {
+    type BorderCountryResponse,
+    useCountryBordersQuery
+} from "@/entities/country/model/queries/useCountryBordersQuery.ts";
+import type {DestinationType} from "@/entities/destination/api/destinationApi.ts";
 
 type BorderCountriesSectionProps = {
-    countryDetails: CountryDetailsData
+    countryDetails: DestinationType
 }
-
 
 export const BorderCountriesSection = ({countryDetails}: BorderCountriesSectionProps) => {
 
-    const {country} = countryDetails;
+    const {borders} = countryDetails;
 
-    console.log(`prop ${country.borders}`)
+    const {data, isLoading, error} = useCountryBordersQuery(borders);
 
-    const {data}  = useCountryBordersQuery(country.borders[0])
-
-    console.log(`с хука ${data.name}`)
+    if (!borders) {
+        return null;
+    }
 
     return (
         <div>
             <p className={s.borderCountriesSectionTitle}>BORDERING COUNTRIES</p>
             <div className={s.borderCountriesList}>
-                <BorderCountryCard borderCountry={data}/>
+                {error && null}
+                {!isLoading && data && data.map((country: BorderCountryResponse) => <BorderCountryCard
+                    key={country.name} borderCountry={country}/>)}
             </div>
         </div>
     );
 };
-

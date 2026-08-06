@@ -1,13 +1,14 @@
 import s from './CountryMetaSection.module.scss';
 import type {CountryDetailsData} from "@/entities/country/model/queries/useCountryDetailsQuery.ts";
 import {BackArrowIcon} from "@/widgets/country-details/ui/icons/BackArrow.tsx";
+import {useNavigate} from "react-router-dom";
 
 type CountryMetaSectionProps = {
     country: CountryDetailsData;
 }
 
 export const CountryMetaSection = ({country}: CountryMetaSectionProps) => {
-
+    const navigate = useNavigate();
     const {imageUrl, country: countryDetails} = country;
 
     return (
@@ -18,7 +19,11 @@ export const CountryMetaSection = ({country}: CountryMetaSectionProps) => {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
             } : undefined}>
-                <button className={s.backArrow}>
+                <button
+                    type="button"
+                    className={s.backArrow}
+                    onClick={() => navigate(-1)}
+                >
                     <BackArrowIcon/>
                 </button>
                 <div className={s.countryInfoWrapper}>
