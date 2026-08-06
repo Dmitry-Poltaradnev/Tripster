@@ -1,0 +1,35 @@
+.myTripsPageHeader {
+
+}
+
+.backArrow {
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.myTripsPageTitle {
+  font-family: var(--third-family), sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  color: var(--color-text-primary);
+  line-height: 150%;
+}
+
+.myTripsPageCounter {
+  font-family: var(--font-family), sans-serif;
+  font-weight: var(--font-weight-medium-pl);
+  font-size: var(--font-size-small);
+  line-height: 133%;
+  color: var(--color-bg-accent);
+
+  border-radius: 50%;
+  padding: 4px 10px;
+  width: 27px;
+  height: 24px;
+  background: var(--color-border);
+}
+
