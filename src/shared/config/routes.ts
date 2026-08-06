@@ -1,7 +1,7 @@
 export const ROUTES = {
     home: '/',
     explore: '/explore',
-    country: '/country/:name',
+    country: '/country/:countryName',
     trips: '/trips',
     myTrips: '/my-trips',
 } as const

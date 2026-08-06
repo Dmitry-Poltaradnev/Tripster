@@ -4,10 +4,13 @@ import {useCountryDetailsQuery} from "@/entities/country/model/queries/useCountr
 import {CountryDetails} from "@/widgets/country-details/ui/CountryDetails.tsx";
 import {CountryForecast} from "@/widgets/country-forecast/ui/CountryForecast.tsx";
 import {BorderCountriesSection} from "@/widgets/country-details/ui/BorderCountriesSection.tsx";
+import {useParams} from "react-router-dom";
 
 export const CountryDetailsPage = () => {
 
-    const {data, isLoading, isError} = useCountryDetailsQuery('Israel');
+    const {countryName} = useParams();
+
+    const {data, isLoading, isError} = useCountryDetailsQuery(countryName || '');
 
     return (
         <div className={s.countryDetailsPage}>

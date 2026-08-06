@@ -14,7 +14,6 @@
 
 .content {
   min-width: 0;
-  //padding: 32px;
   background: var(--color-bg-primary);
 }
 
@@ -22,4 +21,5 @@
   width: 100%;
   max-width: 1150px;
   margin: 0 auto;
+  padding: 0 15px;
 }
