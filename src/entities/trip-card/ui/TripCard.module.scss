@@ -9,7 +9,10 @@
 }
 
 .tripCardInfo {
-  padding: 0 0 15px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 15px;
 }
 
 .tripCardFooter {
@@ -50,4 +53,37 @@
   line-height: 133%;
   color: var(--color-text-secondary);
 }
+
+.tripStatus {
+  font-family: var(--third-family), sans-serif;
+  font-weight: var(--font-weight-medium-pl);
+  font-size: var(--font-size-small);
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  border-radius: 25px;
+  width: 60px;
+  height: 20px;
+  text-align: center;
+}
+
+.current {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+}
+
+.past {
+  color: #9590be;
+  background: rgba(149, 144, 190, 0.12);
+}
+
+.upcoming {
+  color: #2dd4bf;
+  background: rgba(45, 212, 191, 0.12);
+}
+
+.tripCardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
 

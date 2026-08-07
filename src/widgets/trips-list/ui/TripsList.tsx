@@ -1,11 +1,10 @@
-import {TripCardByTripPage} from "@/entities/trip-card-by-trip-page/ui/TripCardByTripPage.tsx";
+import s from './TripsList.module.scss'
+import {TripCard} from "@/entities/trip-card/ui/TripCard.tsx";
 
 export const TripsList = () => {
     return (
-        <div>
-            <TripCardByTripPage/>
-            <TripCardByTripPage/>
-            <TripCardByTripPage/>
+        <div className={s.tripsListWrapper}>
+            <TripCard/>
         </div>
     );
 };
