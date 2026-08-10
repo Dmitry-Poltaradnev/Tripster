@@ -1,19 +1,18 @@
 import s from './MyTripsPage.module.scss'
 import {BackArrowIcon} from "@/widgets/country-details/ui/icons/BackArrow.tsx";
 import {TripsList} from "@/widgets/trips-list/ui/TripsList.tsx";
-import clsx from "clsx";
-import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {Filter} from "@/shared/ui/filter-tabs/Filter.tsx";
 
-export const tripFilterVal = ['All', 'Upcoming', 'Current', 'Past'] as const
-
-export type TripFilter = typeof tripFilterVal[number]
+export const tripFilterVal = ['All', 'Upcoming', 'Current', 'Past']
 
 export const MyTripsPage = () => {
 
     const navigate = useNavigate()
 
-    const [trip, setTrip] = useState<TripFilter>(tripFilterVal[0])
+    const changeFilter = (filterVal: string) => {
+        console.log(filterVal)
+    }
 
     return (
         <>
@@ -28,16 +27,7 @@ export const MyTripsPage = () => {
                     <p className={s.myTripsPageCounter}>6</p>
                 </div>
             </div>
-            <ul className={s.myTripsTypeList}>
-                {tripFilterVal.map((filterVal: TripFilter, index) =>
-                    <li key={filterVal}>
-                        <button onClick={() => setTrip(filterVal)}
-                                className={clsx(s.myTripsListItem, tripFilterVal[index] === trip && s.activeBtn)}>
-                            {filterVal}
-                        </button>
-                    </li>
-                )}
-            </ul>
+            <Filter valueMass={tripFilterVal} onChangeValue={changeFilter}/>
             <button className={s.createNewTripBtn}>+ Plan a new trip</button>
             <TripsList/>
         </>
