@@ -1,6 +1,6 @@
 import s from './RecentTrips.module.scss';
 import {TripCard} from "@/entities/trip-card/ui/TripCard.tsx";
-import {CreateTripCard} from "@/features/create-trip/ui/CreateTripCard.tsx";
+import {CreateTripCard} from "@/features/create-trip/ui/CreateTripCard/CreateTripCard.tsx";
 import {useNavigate} from "react-router-dom";
 import {ROUTES} from "@/shared/config/routes.ts";
 

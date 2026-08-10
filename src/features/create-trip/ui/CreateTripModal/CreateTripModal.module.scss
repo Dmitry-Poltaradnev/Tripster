@@ -1,0 +1,38 @@
+.tripModalWrapper {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-sidebar);
+  border-radius: 25px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 24px 64px 0 rgba(0, 0, 0, 0.5);
+  padding: 12px 20px 32px;
+}
+
+.modalTitle {
+  font-family: var(--third-family), serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-large);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.headerModal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.closeBtn {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.closeIcon {
+  color: var(--color-text-secondary);
+}
+
+
