@@ -2,8 +2,13 @@ import s from './CreateTripForm.module.scss'
 import {type FormEvent, useRef, useState} from 'react'
 import {DateIcon} from '@/features/create-trip/ui/icons'
 import clsx from "clsx";
+import {useTripStore} from "@/entities/trip/model/store/useTripStore.ts";
 
-export const TripForm = () => {
+type TripFormProps = {
+    onClose: () => void
+}
+
+export const TripForm = ({onClose}: TripFormProps) => {
     const [title, setTitle] = useState('')
     const [startDate, setStartDate] = useState('')
     const [endDate, setEndDate] = useState('')
@@ -12,6 +17,8 @@ export const TripForm = () => {
 
     const startDateRef = useRef<HTMLInputElement>(null)
     const endDateRef = useRef<HTMLInputElement>(null)
+
+    const addTrip = useTripStore((state) => state.addTrip)
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -23,6 +30,8 @@ export const TripForm = () => {
         }
 
         console.log(trip)
+        addTrip(trip)
+        onClose()
     }
 
     return (

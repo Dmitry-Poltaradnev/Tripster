@@ -15,7 +15,7 @@ export const CreateTripModal = ({onClose}: CreateTripModalProps) => {
                     <CloseIcon className={s.closeIcon}/>
                 </button>
             </div>
-            <TripForm/>
+            <TripForm onClose={onClose}/>
         </div>
     );
 };

@@ -1,0 +1,107 @@
+.emptyPageContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.pageInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.emptyListIcon {
+  width: 112px;
+  height: 112px;
+  border-radius: 25px;
+  background: var(--color-bg-secondary);
+  color: var(--color-transparent-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageTitle {
+  font-family: var(--third-family), serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  color: var(--color-text-primary);
+  line-height: 150%;
+  padding: 45px 0 50px 20px;
+}
+
+.pageSubTitle {
+  font-family: var(--third-family), serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-middle);
+  color: var(--color-text-primary);
+  line-height: 150%;
+}
+
+.pageDesc {
+  font-family: var(--font-family), serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-main);
+  color: var(--color-text-secondary);
+  line-height: 163%;
+}
+
+.createNewTripBtn {
+  font-family: var(--third-family), serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-medium);
+  line-height: 150%;
+  letter-spacing: 0.07em;
+  color: var(--color-white);
+  background: var(--color-bg-accent);
+  border-radius: 16px;
+  padding: 16px 0;
+  width: 320px;
+  max-width: 90%;
+  height: 56px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.tripBtnIcon {
+  color: var(--color-white);
+}
+
+.btnsWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btnIcon {
+  color: var(--color-bg-accent);
+}
+
+.btnTitle {
+  font-family: var(--font-family), serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  line-height: 133%;
+}
+
+.btnTripContr {
+  border: 1px solid rgba(124, 111, 255, 0.07);
+  border-radius: 15px;
+  padding: 10px 16px 10px 60px;
+  width: 320px;
+  max-width: 90%;
+  height: 38px;
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  align-items: center;
+  background: var(--color-bg-transparent);
+}

@@ -1,18 +1,14 @@
 import s from './TripCard.module.scss';
 import {ShowIcon} from "@/entities/trip-card/icons/ShowIcon.tsx";
 import clsx from "clsx";
-
-type CityType = {
-    cityTitle: string,
-    countryFlag: string
-}
+import type {TripCity, TripStatus} from "@/entities/trip/model/types.ts";
 
 type TripCardProps = {
     tripTitle?: string,
     dates?: string[],
-    cities?: CityType[],
+    cities?: TripCity[],
     tripDuration?: number,
-    tripStatus?: string[]
+    tripStatus?: TripStatus
 }
 
 export const TripCard = ({tripTitle, dates, cities, tripDuration}: TripCardProps) => {
