@@ -7,6 +7,7 @@ import {CreateTripModal} from "@/features/create-trip/ui/CreateTripModal/CreateT
 import {useEffect, useState} from "react";
 import {useTripStore} from "@/entities/trip/model/store/useTripStore.ts";
 import {EmptyTripsList} from "@/widgets/empty-trips-list/ui/EmptyTripsList.tsx";
+import {Button} from "@/shared/ui/button";
 
 export const tripFilterVal = ['All', 'Upcoming', 'Current', 'Past']
 
@@ -66,8 +67,9 @@ export const MyTripsPage = () => {
                         </div>
                     </div>
                     <Filter valueMass={tripFilterVal} onChangeValue={changeFilter}/>
-                    <button onClick={() => setModalState(true)} className={s.createNewTripBtn}>+ Plan a new trip
-                    </button>
+                    <Button onClick={() => setModalState(true)} className={s.createNewTripBtn}>
+                        + Plan a new trip
+                    </Button>
                     <TripsList/>
                 </div>
             }

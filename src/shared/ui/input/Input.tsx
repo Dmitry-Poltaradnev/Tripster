@@ -1,5 +1,6 @@
 import s from './Input.module.scss';
 import {type ReactNode, useState} from "react";
+import {Button} from "@/shared/ui/button";
 
 type InputProps = {
     className?: string
@@ -20,9 +21,9 @@ export const Input = ({placeholder, icon, value, enterVal, disabled}: InputProps
 
     return (
         <div className={s.inputWrapper}>
-            <button className={s.iconInput} onClick={submitValue}>
+            <Button className={s.iconInput} onClick={submitValue}>
                 {icon ? <span>{icon}</span> : null}
-            </button>
+            </Button>
             <input
                 className={s.input}
                 placeholder={placeholder}

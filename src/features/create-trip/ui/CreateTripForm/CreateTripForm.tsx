@@ -3,6 +3,7 @@ import {type FormEvent, useRef, useState} from 'react'
 import {DateIcon} from '@/features/create-trip/ui/icons'
 import clsx from "clsx";
 import {useTripStore} from "@/entities/trip/model/store/useTripStore.ts";
+import {Button} from "@/shared/ui/button";
 
 type TripFormProps = {
     onClose: () => void
@@ -54,15 +55,14 @@ export const TripForm = ({onClose}: TripFormProps) => {
                         <DateIcon className={s.dateIcon}/>
                         <label className={s.formLabel} htmlFor="startDate">START</label>
                     </div>
-
-                    <button
-                        type="button"
+                    <Button
                         className={s.dateBtn}
+                        type="button"
                         onClick={() => startDateRef.current?.showPicker()}
                         aria-label="Select start date"
                     >
                         <span className={s.dateButtonValue}>{startDate}</span>
-                    </button>
+                    </Button>
 
                     <input
                         ref={startDateRef}
@@ -80,14 +80,14 @@ export const TripForm = ({onClose}: TripFormProps) => {
                         <label className={s.formLabel} htmlFor="endDate">END</label>
                     </div>
 
-                    <button
+                    <Button
                         type="button"
                         className={s.dateBtn}
                         onClick={() => endDateRef.current?.showPicker()}
                         aria-label="Select end date"
                     >
                         <span className={s.dateButtonValue}>{endDate}</span>
-                    </button>
+                    </Button>
 
                     <input
                         ref={endDateRef}
@@ -105,13 +105,13 @@ export const TripForm = ({onClose}: TripFormProps) => {
                 You'll be taken to your new trip where you can add destinations from Explore.
             </p>
 
-            <button
+            <Button
                 className={clsx(s.createTripBtn, isFormValid && s.active)}
                 type="submit"
                 disabled={!isFormValid}
             >
                 CREATE TRIP
-            </button>
+            </Button>
         </form>
     )
 }

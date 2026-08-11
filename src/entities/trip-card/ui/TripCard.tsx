@@ -2,6 +2,7 @@ import s from './TripCard.module.scss';
 import {ShowIcon} from "@/entities/trip-card/icons/ShowIcon.tsx";
 import clsx from "clsx";
 import type {TripCity, TripStatus} from "@/entities/trip/model/types.ts";
+import {Button} from "@/shared/ui/button";
 
 type TripCardProps = {
     tripTitle?: string,
@@ -27,13 +28,14 @@ export const TripCard = ({tripTitle, dates, cities, tripDuration}: TripCardProps
                     <p className={s.tripCardDates}>Apr 28 – May 8</p>
                 </div>
             </div>
-            <button className={s.tripCardFooter}>
+            <Button className={s.tripCardFooter} children={<>
                 <div className={s.tripCardDescription}>
                     <p className={s.tripCardCities}>3 cities</p>
                     <p className={s.tripCardDays}>11d</p>
                 </div>
                 <ShowIcon color="var(--color-text-secondary)"/>
-            </button>
+            </>}
+            />
         </div>
     );
 };

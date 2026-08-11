@@ -1,6 +1,7 @@
 import s from './Filter.module.scss'
 import clsx from "clsx";
 import {useState} from "react";
+import {Button} from "@/shared/ui/button";
 
 type FilterPropsType = {
     valueMass: string[],
@@ -20,10 +21,10 @@ export const Filter = ({valueMass, onChangeValue}: FilterPropsType) => {
         <ul className={s.myTripsTypeList}>
             {valueMass?.map((filterVal: string, index: number) =>
                 <li key={filterVal}>
-                    <button onClick={() => changeFilter(filterVal)}
+                    <Button onClick={() => changeFilter(filterVal)}
                             className={clsx(s.myTripsListItem, valueMass[index] === trip && s.activeBtn)}>
                         {filterVal}
-                    </button>
+                    </Button>
                 </li>
             )}
         </ul>

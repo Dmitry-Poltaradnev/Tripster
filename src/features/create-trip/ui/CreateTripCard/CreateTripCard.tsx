@@ -1,6 +1,7 @@
 import s from './CreateTripCard.module.scss';
 import {PlusIcon} from "@/features/create-trip/ui/icons";
 import {useNavigate} from "react-router-dom";
+import {Button} from "@/shared/ui/button";
 
 export const CreateTripCard = () => {
 
@@ -15,12 +16,13 @@ export const CreateTripCard = () => {
     }
 
     return (
-        <button onClick={openCreateTripForm} className={s.createTripCardWrapper}>
-            <span className={s.plusIconWrapper}>
-            <PlusIcon className={s.plusIcon}/>
-            </span>
+        <Button className={s.createTripCardWrapper}
+                onClick={openCreateTripForm}>
+             <span className={s.plusIconWrapper}>
+                 <PlusIcon className={s.plusIcon}/>
+             </span>
             <p className={s.createTripCardText}>New Trip</p>
-        </button>
+        </Button>
     );
 };
 

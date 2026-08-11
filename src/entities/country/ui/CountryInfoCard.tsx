@@ -30,7 +30,6 @@ export const CountryInfoCard = ({dataTitle, title, icon}: CountryInfoCardProps) 
                     {dataTitle}
                 </div>
             )}
-
         </div>
     );
 };

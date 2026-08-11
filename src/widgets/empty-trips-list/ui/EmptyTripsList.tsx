@@ -1,6 +1,7 @@
 import s from './EmptyTripsList.module.scss'
 import {DragAndDropIcon, SuitcaseIcon, MapIcon, DownloadIcon} from "@/widgets/empty-trips-list/icons";
 import {ShareIcon} from "@/widgets/side-bar/icons";
+import {Button} from "@/shared/ui/button";
 
 type EmptyTripsListProps = {
     openModal: () => void
@@ -21,20 +22,23 @@ export const EmptyTripsList = ({openModal}: EmptyTripsListProps) => {
                         and
                         build your perfect itinerary.</p>
                 </div>
-                <button className={s.createNewTripBtn} onClick={openModal}>
+                <Button className={s.createNewTripBtn} onClick={openModal}>
                     <MapIcon className={s.tripBtnIcon}/>
                     <p>ADD YOUR FIRST TRIP</p>
-                </button>
+                </Button>
                 <div className={s.btnsWrapper}>
-                    <button className={s.btnTripContr}><DragAndDropIcon className={s.btnIcon}/>
+                    <Button className={s.btnTripContr}>
+                        <DragAndDropIcon className={s.btnIcon}/>
                         <p className={s.btnTitle}>Drag & drop stop reordering</p>
-                    </button>
-                    <button className={s.btnTripContr}><DownloadIcon className={s.btnIcon}/>
+                    </Button>
+                    <Button className={s.btnTripContr}>
+                        <DownloadIcon className={s.btnIcon}/>
                         <p className={s.btnTitle}>Export itinerary as PDF</p>
-                    </button>
-                    <button className={s.btnTripContr}><ShareIcon className={s.btnIcon}/>
+                    </Button>
+                    <Button className={s.btnTripContr}>
+                        <ShareIcon className={s.btnIcon}/>
                         <p className={s.btnTitle}>Share via link — no account</p>
-                    </button>
+                    </Button>
                 </div>
             </div>
         </>
