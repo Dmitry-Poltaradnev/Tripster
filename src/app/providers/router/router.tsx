@@ -1,11 +1,11 @@
 import {createBrowserRouter} from "react-router-dom";
 import {ExplorePage} from "@/pages/explore";
 import {CountryDetailsPage} from "@/pages/country-details";
-import {AllTripsPage} from "@/pages/all-trips";
 import {MyTripsPage} from "@/pages/my-trips";
 import {AppLayout} from "@/widgets/app-layout";
 import {HomePage} from "@/pages/home";
 import {ROUTES} from "@/shared/config/routes.ts";
+import {MyTrip} from "@/pages/trip";
 
 export const router = createBrowserRouter([
     {
@@ -24,13 +24,13 @@ export const router = createBrowserRouter([
                 element: <CountryDetailsPage/>
             },
             {
-                path: ROUTES.trips,
-                element: <AllTripsPage/>
-            },
-            {
                 path: ROUTES.myTrips,
                 element: <MyTripsPage/>
-            }
+            },
+            {
+                path: ROUTES.trip,
+                element: <MyTrip/>
+            },
         ]
     }
 ]);

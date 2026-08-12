@@ -1,9 +1,9 @@
 import s from './RecentTrips.module.scss';
-import {TripCard} from "@/entities/trip-card/ui/TripCard.tsx";
 import {CreateTripCard} from "@/features/create-trip/ui/CreateTripCard/CreateTripCard.tsx";
 import {useNavigate} from "react-router-dom";
 import {ROUTES} from "@/shared/config/routes.ts";
 import {Button} from "@/shared/ui/button";
+import {TripsList} from "@/widgets/trips-list/ui/TripsList.tsx";
 
 export const RecentTrips = () => {
 
@@ -18,7 +18,7 @@ export const RecentTrips = () => {
                 </Button>
             </div>
             <div className={s.recentTripsList}>
-                <TripCard/>
+                <TripsList/>
                 <CreateTripCard/>
             </div>
         </>

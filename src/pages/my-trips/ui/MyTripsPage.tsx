@@ -63,7 +63,7 @@ export const MyTripsPage = () => {
                             <p className={s.myTripsPageTitle}>All Trips</p>
                         </div>
                         <div className={s.headerSecondSection}>
-                            <p className={s.myTripsPageCounter}>6</p>
+                            <p className={s.myTripsPageCounter}>{trips.length}</p>
                         </div>
                     </div>
                     <Filter valueMass={tripFilterVal} onChangeValue={changeFilter}/>
