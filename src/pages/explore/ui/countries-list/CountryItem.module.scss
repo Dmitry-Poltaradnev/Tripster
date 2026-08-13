@@ -1,0 +1,49 @@
+.itemBlockDesc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.countryItemFlag {
+  width: 25px;
+}
+
+.countryItemWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 299px;
+  height: 62px;
+  background: var(--color-bg-transparent);
+}
+
+.countryItemBackBtn {
+  transform: rotate(180deg);
+  color: var(--color-transparent-text);
+}
+
+.countryItemTitle {
+  font-family: var(--font-family), serif;
+  font-weight: var(--font-weight-medium-pl);
+  font-size: var(--font-size-main);
+  color: var(--color-text-primary);
+  line-height: 143%;
+}
+
+.countryItemDesc {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemInfo {
+  font-family: var(--second-family), serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  line-height: 133%;
+}

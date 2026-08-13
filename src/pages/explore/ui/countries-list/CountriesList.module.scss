@@ -1,0 +1,14 @@
+.countriesCounter {
+  font-family: var(--second-family), serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  line-height: 133%;
+  margin: 44px 12px 20px;
+}
+
+.countryList {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
