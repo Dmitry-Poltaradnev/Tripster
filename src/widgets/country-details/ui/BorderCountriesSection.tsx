@@ -1,10 +1,10 @@
-import s from './BorderCountriesSection.module.scss';
 import {BorderCountryCard} from "@/entities/country/ui/BorderCountryCard.tsx";
 import {
     type BorderCountryResponse,
     useCountryBordersQuery
 } from "@/entities/country/model/queries/useCountryBordersQuery.ts";
-import type {DestinationType} from "@/entities/destination/api/destinationApi.ts";
+import type {DestinationType} from "@/entities/destination/model/types.ts";
+import s from './BorderCountriesSection.module.scss';
 
 type BorderCountriesSectionProps = {
     countryDetails: DestinationType

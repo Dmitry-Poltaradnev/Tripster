@@ -1,6 +1,6 @@
 import s from './PopularDestinationCard.module.scss';
-import type {DestinationType} from "@/entities/destination/api/destinationApi.ts";
 import {Link} from "react-router-dom";
+import type {DestinationType} from "@/entities/destination/model/types.ts";
 
 export type PopularDestination = DestinationType & {
     imageUrl?: string;

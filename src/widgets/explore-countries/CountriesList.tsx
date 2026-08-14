@@ -1,11 +1,11 @@
 import {useCountriesRegionQuery} from "@/widgets/explore-countries/model/queries/useCountriesRegionQuery.ts";
 import {CountryItem} from "@/entities/country/ui/CountryItem.tsx";
-import type {DestinationType} from "@/entities/destination/api/destinationApi.ts";
 import s from './CountriesList.module.scss'
 import {getCountryCoordinates} from "@/entities/country/api/coordinatesCountriesApi.ts";
 import type {Dispatch, SetStateAction} from "react";
 import {useEffect, useMemo} from "react";
 import {useQueries} from "@tanstack/react-query";
+import type {DestinationType} from "@/entities/destination/model/types.ts";
 
 export type CoordinateItem = {
     latitude: number

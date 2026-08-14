@@ -1,4 +1,4 @@
-import type {DestinationType} from "@/entities/destination/api/destinationApi.ts";
+import type {DestinationType} from "@/entities/destination/model/types.ts";
 
 export const getCountriesByRegion = async (region: string) => {
     const response = await fetch(`https://countries.dev/region/${region}`)

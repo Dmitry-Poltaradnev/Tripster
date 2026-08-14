@@ -1,10 +1,10 @@
-import s from './MyTrip.module.scss'
 import {useTripStore} from "@/entities/trip/model/store/useTripStore.ts";
 import type {Trip} from "@/entities/trip/model/types.ts";
 import {useParams} from "react-router-dom";
 import {ShareIcon} from "@/widgets/side-bar/icons";
 import {DownloadIcon, SuitcaseIcon} from "@/widgets/empty-trips-list/icons";
 import {DestinationList} from "@/widgets/trip-destination-list/ui/DestinationList.tsx";
+import s from './MyTrip.module.scss'
 
 export const MyTrip = () => {
 

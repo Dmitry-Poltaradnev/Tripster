@@ -1,8 +1,8 @@
 import s from './CountryMetaSection.module.scss';
-import type {CountryDetailsData} from "@/entities/country/model/queries/useCountryDetailsQuery.ts";
 import {BackArrowIcon} from "@/shared/ui/icons/BackArrowIcon.tsx";
 import {useNavigate} from "react-router-dom";
 import {Button} from "@/shared/ui/button";
+import type {CountryDetailsData} from "@/entities/country/model/types.ts";
 
 type CountryMetaSectionProps = {
     country: CountryDetailsData;

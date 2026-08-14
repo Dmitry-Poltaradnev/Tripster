@@ -1,7 +1,7 @@
 import s from './CountryForecast.module.scss';
 import {ForecastDayCard} from "@/entities/weather/ui/ForecastDayCard.tsx";
-import type {CountryDetailsData} from "@/entities/country/model/queries/useCountryDetailsQuery.ts";
 import {useCountryWeatherQuery} from "@/entities/weather/model/queries/useCountryWeatherQuery.ts";
+import type {CountryDetailsData} from "@/entities/country/model/types.ts";
 
 type CountryForecastProps = {
     countryDetails: CountryDetailsData

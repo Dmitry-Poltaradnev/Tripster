@@ -1,6 +1,6 @@
-import s from './Input.module.scss';
 import {type ReactNode, useState} from "react";
 import {Button} from "@/shared/ui/button";
+import s from './Input.module.scss';
 
 type InputProps = {
     className?: string

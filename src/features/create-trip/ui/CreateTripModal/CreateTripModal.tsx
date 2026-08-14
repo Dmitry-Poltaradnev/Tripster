@@ -1,7 +1,7 @@
-import s from './CreateTripModal.module.scss'
 import {TripForm} from "@/features/create-trip/ui/CreateTripForm/CreateTripForm.tsx";
 import {Button} from "@/shared/ui/button";
 import {CloseIcon} from "@/shared/ui/icons";
+import s from './CreateTripModal.module.scss'
 
 type CreateTripModalProps = {
     onClose: () => void

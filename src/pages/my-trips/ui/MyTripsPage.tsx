@@ -1,4 +1,3 @@
-import s from './MyTripsPage.module.scss'
 import {BackArrowIcon} from "@/shared/ui/icons/BackArrowIcon.tsx";
 import {TripsList} from "@/widgets/trips-list/ui/TripsList.tsx";
 import {useLocation, useNavigate} from "react-router-dom";
@@ -8,6 +7,7 @@ import {useEffect, useState} from "react";
 import {useTripStore} from "@/entities/trip/model/store/useTripStore.ts";
 import {EmptyTripsList} from "@/widgets/empty-trips-list/ui/EmptyTripsList.tsx";
 import {Button} from "@/shared/ui/button";
+import s from './MyTripsPage.module.scss'
 
 export const tripFilterVal = ['All', 'Upcoming', 'Current', 'Past']
 

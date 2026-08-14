@@ -2,9 +2,9 @@ import s from './TripCard.module.scss';
 import {ShowIcon} from "@/entities/trip-card/icons/ShowIcon.tsx";
 import type {Trip} from "@/entities/trip/model/types.ts";
 import {Button} from "@/shared/ui/button";
-import clsx from "clsx";
 import {getTripRoute} from "@/shared/config/routes.ts";
 import {useNavigate} from "react-router-dom";
+import clsx from "clsx";
 
 type TripCardProps = {
     trip: Trip

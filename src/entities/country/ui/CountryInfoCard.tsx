@@ -1,6 +1,6 @@
 import s from './CountryInfoCard.module.scss';
 import * as React from "react";
-import type {CurrenciesType, LanguagesType} from "@/entities/destination/api/destinationApi.ts";
+import type {CurrenciesType, LanguagesType} from "@/entities/destination/model/types.ts";
 
 type CountryInfoCardProps = {
     dataTitle: string | CurrenciesType[] | number | LanguagesType[];

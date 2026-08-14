@@ -1,7 +1,7 @@
-import s from './CountryDetails.module.scss';
 import {CountryInfoCard} from "@/entities/country/ui/CountryInfoCard.tsx";
-import type {CountryDetailsData} from "@/entities/country/model/queries/useCountryDetailsQuery.ts";
 import {CurrencyIcon, LanguagesIcon, MapPointIcon, PopulationIcon} from "@/entities/country/ui/icons";
+import type {CountryDetailsData} from "@/entities/country/model/types.ts";
+import s from './CountryDetails.module.scss';
 
 
 type CountryDetailsProps = {

@@ -1,6 +1,6 @@
 import {useQuery} from "@tanstack/react-query";
-import type {DestinationType} from "@/entities/destination/api/destinationApi.ts";
 import {getCountriesByRegion} from "@/entities/country/api/regionCountriesApi.ts";
+import type {DestinationType} from "@/entities/destination/model/types.ts";
 
 export const useCountriesRegionQuery = (region: string) => {
     return useQuery<DestinationType[]>({
