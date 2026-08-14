@@ -1,0 +1,6 @@
+export {BackArrowIcon} from './BackArrowIcon'
+export {CloseIcon} from './CloseIcon'
+export {PlusIcon} from './PlusIcon'
+export {LensIcon} from './LensIcon'
+export {DownloadIcon} from './DownloadIcon'
+export {ShareIcon} from './ShareIcon'

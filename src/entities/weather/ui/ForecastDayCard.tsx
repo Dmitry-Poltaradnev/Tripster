@@ -1,6 +1,6 @@
 import s from './ForecastDayCard.module.scss';
 import type {DailyForecastType} from "@/entities/weather/model/types.ts";
-import {CloudIcon, SunIcon, RainIcon} from "@/widgets/country-forecast/ui/icons"
+import {CloudIcon, RainIcon, SunIcon} from "@/entities/weather/ui/icons";
 
 type ForecastDayCardProps = {
     day: DailyForecastType

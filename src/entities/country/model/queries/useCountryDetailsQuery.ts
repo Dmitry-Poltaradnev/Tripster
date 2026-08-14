@@ -1,12 +1,7 @@
 import {useQuery} from "@tanstack/react-query";
-import type {DestinationType} from "@/entities/destination/api/destinationApi.ts";
 import {getDestinationImage} from "@/entities/destination/api/imageApi.ts";
 import {getCountryInfo} from "@/entities/country/api/countryApi.ts";
-
-export type CountryDetailsData = {
-    country: DestinationType;
-    imageUrl?: string;
-};
+import type {CountryDetailsData} from "@/entities/country/model/types.ts";
 
 export const useCountryDetailsQuery = (countryName: string) => {
     return useQuery<CountryDetailsData>({

@@ -1,7 +1,7 @@
 import type {FlagsType} from "@/entities/destination/api/destinationApi.ts";
 import s from './CountryItem.module.scss'
 import {Button} from "@/shared/ui/button";
-import {BackArrowIcon} from "@/widgets/country-details/ui/icons/BackArrow.tsx";
+import {BackArrowIcon} from "@/shared/ui/icons/BackArrowIcon.tsx";
 import {useNavigate} from "react-router-dom";
 
 type CountryItemProps = {

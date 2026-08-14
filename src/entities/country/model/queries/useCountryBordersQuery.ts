@@ -1,10 +1,6 @@
 import {useQuery} from "@tanstack/react-query";
 import {getBorderCountryInfo} from "@/entities/country/api/borderCountryApi.ts";
-
-type flagsTypes = {
-    png: string
-    svg: string
-}
+import type {flagsTypes} from "@/entities/country/model/types.ts";
 
 export interface BorderCountryResponse {
     name: string

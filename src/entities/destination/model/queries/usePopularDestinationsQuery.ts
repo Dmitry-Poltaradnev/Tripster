@@ -1,6 +1,7 @@
 import {useQuery} from "@tanstack/react-query";
-import {type DestinationType, getPopularCountries} from "@/entities/destination/api/destinationApi.ts";
+import { getPopularCountries} from "@/entities/destination/api/destinationApi.ts";
 import {getDestinationImage} from "@/entities/destination/api/imageApi.ts";
+import type {DestinationType} from "@/entities/destination/model/types.ts";
 
 export const usePopularDestinationsQuery = () => {
     return useQuery<DestinationType[]>({

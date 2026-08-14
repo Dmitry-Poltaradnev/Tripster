@@ -1,1 +1,0 @@
-export {LensIcon} from './LensIcon'

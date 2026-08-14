@@ -1,11 +1,11 @@
 import {Input} from "@/shared/ui/input";
 import {Filter} from "@/shared/ui/filter-tabs";
-import {LensIcon} from "@/shared/ui/input/icons";
-import {type CoordinateItem, CountriesList} from "@/pages/explore/ui/countries-list/CountriesList.tsx";
+import {type CoordinateItem, CountriesList} from "@/widgets/explore-countries/CountriesList.tsx";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import s from './ExplorePage.module.scss'
-import {SearchMap} from "@/pages/explore/ui/countries-list/SearchMap.tsx";
+import {SearchMap} from "@/widgets/explore-map/SearchMap.tsx";
+import {LensIcon} from "@/shared/ui/icons";
 
 export const partsOfTheWorld = [
     'Africa',

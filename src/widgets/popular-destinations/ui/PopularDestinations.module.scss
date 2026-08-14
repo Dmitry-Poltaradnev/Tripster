@@ -1,5 +1,5 @@
 .popularDestinations {
-  margin: 40px 0;
+  margin: 30px 0;
 }
 
 .title {
@@ -9,12 +9,12 @@
   line-height: 150%;
   letter-spacing: 0.03em;
   color: var(--color-text-primary);
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 
 .destinationCardsWrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   gap: 30px;
 }

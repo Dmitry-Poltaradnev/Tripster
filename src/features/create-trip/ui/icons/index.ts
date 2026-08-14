@@ -1,3 +1,2 @@
-export {PlusIcon} from './PlusIcon'
-export {CloseIcon} from './CloseIcon'
+export {PlusIcon} from '../../../../shared/ui/icons/PlusIcon.tsx'
 export {DateIcon} from './DateIcon'

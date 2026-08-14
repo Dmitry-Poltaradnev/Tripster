@@ -1,5 +1,5 @@
 import s from './MyTripsPage.module.scss'
-import {BackArrowIcon} from "@/widgets/country-details/ui/icons/BackArrow.tsx";
+import {BackArrowIcon} from "@/shared/ui/icons/BackArrowIcon.tsx";
 import {TripsList} from "@/widgets/trips-list/ui/TripsList.tsx";
 import {useLocation, useNavigate} from "react-router-dom";
 import {Filter} from "@/shared/ui/filter-tabs/Filter.tsx";

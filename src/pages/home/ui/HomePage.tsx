@@ -1,9 +1,9 @@
-import {LensIcon} from "@/shared/ui/input/icons";
 import {Input} from "@/shared/ui/input";
 import {RecentTrips} from "@/widgets/recent-trips/ui/RecentTrips.tsx";
 import {PopularDestinations} from "@/widgets/popular-destinations/ui/PopularDestinations.tsx";
 import s from './HomePage.module.scss'
 import {useNavigate} from "react-router-dom";
+import {LensIcon} from "@/shared/ui/icons";
 
 export const HomePage = () => {
 
