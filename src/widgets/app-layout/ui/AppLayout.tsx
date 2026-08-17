@@ -10,9 +10,7 @@ export function AppLayout() {
             </aside>
 
             <main className={s.content}>
-                <div className={s.contentInner}>
-                    <Outlet/>
-                </div>
+                <Outlet/>
             </main>
         </div>
     )

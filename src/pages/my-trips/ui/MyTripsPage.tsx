@@ -44,36 +44,38 @@ export const MyTripsPage = () => {
     const trips = useTripStore((state) => state.trips)
 
     return (
-        <>
-            {modalState && (
-                <div className={s.modalOverlay}>
-                    <div className={s.modalContent} onClick={(e) => e.stopPropagation()}>
-                        <CreateTripModal onClose={() => setModalState(false)}/>
-                    </div>
-                </div>
-            )}
-            {trips.length === 0 ?
-                <EmptyTripsList openModal={() => setModalState(true)}/> :
-                <div>
-                    <div className={s.myTripsPageHeader}>
-                        <div className={s.headerFirstSection}>
-                            <button onClick={() => navigate(-1)} className={s.backArrow}>
-                                <BackArrowIcon/>
-                            </button>
-                            <p className={s.myTripsPageTitle}>All Trips</p>
-                        </div>
-                        <div className={s.headerSecondSection}>
-                            <p className={s.myTripsPageCounter}>{trips.length}</p>
+        <div className={s.contentInner}>
+            <>
+                {modalState && (
+                    <div className={s.modalOverlay}>
+                        <div className={s.modalContent} onClick={(e) => e.stopPropagation()}>
+                            <CreateTripModal onClose={() => setModalState(false)}/>
                         </div>
                     </div>
-                    <Filter valueMass={tripFilterVal} onChangeValue={changeFilter}/>
-                    <Button onClick={() => setModalState(true)} className={s.createNewTripBtn}>
-                        + Plan a new trip
-                    </Button>
-                    <TripsList/>
-                </div>
-            }
-        </>
+                )}
+                {trips.length === 0 ?
+                    <EmptyTripsList openModal={() => setModalState(true)}/> :
+                    <div>
+                        <div className={s.myTripsPageHeader}>
+                            <div className={s.headerFirstSection}>
+                                <button onClick={() => navigate(-1)} className={s.backArrow}>
+                                    <BackArrowIcon/>
+                                </button>
+                                <p className={s.myTripsPageTitle}>All Trips</p>
+                            </div>
+                            <div className={s.headerSecondSection}>
+                                <p className={s.myTripsPageCounter}>{trips.length}</p>
+                            </div>
+                        </div>
+                        <Filter valueMass={tripFilterVal} onChangeValue={changeFilter}/>
+                        <Button onClick={() => setModalState(true)} className={s.createNewTripBtn}>
+                            + Plan a new trip
+                        </Button>
+                        <TripsList/>
+                    </div>
+                }
+            </>
+        </div>
     );
 };
 

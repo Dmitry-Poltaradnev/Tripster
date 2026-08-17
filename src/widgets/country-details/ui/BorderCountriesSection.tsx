@@ -1,10 +1,8 @@
 import {BorderCountryCard} from "@/entities/country/ui/BorderCountryCard.tsx";
-import {
-    type BorderCountryResponse,
-    useCountryBordersQuery
-} from "@/entities/country/model/queries/useCountryBordersQuery.ts";
 import type {DestinationType} from "@/entities/destination/model/types.ts";
 import s from './BorderCountriesSection.module.scss';
+import type {BorderCountryResponse} from "@/entities/country/model/types.ts";
+import {useCountryBordersQuery} from "@/entities/country/model/queries/useCountryBordersQuery.ts";
 
 type BorderCountriesSectionProps = {
     countryDetails: DestinationType
@@ -12,12 +10,12 @@ type BorderCountriesSectionProps = {
 
 export const BorderCountriesSection = ({countryDetails}: BorderCountriesSectionProps) => {
 
-    const {borders} = countryDetails;
+    const borders = countryDetails.borders ?? [];
 
     const {data, isLoading, error} = useCountryBordersQuery(borders);
 
-    if (!borders) {
-        return null;
+    if (!borders.length) {
+        return <div className={s.issueDesc}>No data on bordering countries</div>
     }
 
     return (

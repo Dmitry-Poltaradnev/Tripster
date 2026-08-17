@@ -9,3 +9,9 @@ export type CountryDetailsData = {
     country: DestinationType;
     imageUrl?: string;
 };
+
+export interface BorderCountryResponse {
+    name: string
+    capital: string
+    flags: flagsTypes
+}

@@ -13,3 +13,12 @@
   flex-wrap: wrap;
   gap: 8px;
 }
+
+.issueDesc {
+  font-family: var(--third-family), serif;
+  font-weight: var(--font-weight-medium-pl);
+  font-size: var(--font-size-medium);
+  color: var(--color-white);
+  line-height: 150%;
+  letter-spacing: 0.03em;
+}

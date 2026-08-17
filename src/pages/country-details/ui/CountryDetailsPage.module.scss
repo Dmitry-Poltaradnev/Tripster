@@ -1,11 +1,23 @@
+.countryDetailsPage {
+  width: 100%;
+}
+
+.contentInner {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .countryDetails {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
+
 .countryInfoWrapper{
-  margin: 30px;
+  margin: 30px 0;
   display: flex;
   flex-direction: column;
   gap: 30px;

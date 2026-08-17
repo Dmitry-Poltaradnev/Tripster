@@ -14,12 +14,14 @@ export const HomePage = () => {
     }
 
     return (
-        <div className={s.homePageBody}>
-            <p className={s.homePageSubTitle}>Good morning</p>
-            <p className={s.homePageTitle}>Where to next?</p>
-            <Input placeholder={'Search countries...'} icon={<LensIcon/>} enterVal={searchCountry}/>
-            <RecentTrips/>
-            <PopularDestinations/>
+        <div className={s.contentInner}>
+            <div className={s.homePageBody}>
+                <p className={s.homePageSubTitle}>Good morning</p>
+                <p className={s.homePageTitle}>Where to next?</p>
+                <Input placeholder={'Search countries...'} icon={<LensIcon/>} enterVal={searchCountry}/>
+                <RecentTrips/>
+                <PopularDestinations/>
+            </div>
         </div>
     );
 };
