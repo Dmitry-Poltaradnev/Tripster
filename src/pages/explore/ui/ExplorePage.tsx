@@ -29,14 +29,12 @@ export const ExplorePage = () => {
 
     return (
         <div className={s.contentInner}>
-            <div className={s.explorePageWrapper}>
+            <div className={s.explorePageContent}>
                 <Input placeholder='Search countries...' icon={<LensIcon/>} enterVal={searchCountry}/>
                 <Filter valueMass={partsOfTheWorld} onChangeValue={setPart}/>
-                <div className={s.explorePageContent}>
-                    <CountriesList region={part} setMass={setMass}/>
-                    <SearchMap mass={mass}/>
-                </div>
+                <CountriesList region={part} setMass={setMass}/>
             </div>
+            <SearchMap mass={mass}/>
         </div>
     );
 };

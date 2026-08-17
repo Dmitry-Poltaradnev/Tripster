@@ -4,7 +4,7 @@
   font-size: var(--font-size-small);
   color: var(--color-text-secondary);
   line-height: 133%;
-  margin: 0 10px 10px;
+  margin-bottom: 15px;
 }
 
 .countryList {
@@ -16,5 +16,4 @@
 .countriesWrap {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
