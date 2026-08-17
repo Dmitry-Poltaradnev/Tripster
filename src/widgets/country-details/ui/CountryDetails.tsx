@@ -3,7 +3,6 @@ import {CurrencyIcon, LanguagesIcon, MapPointIcon, PopulationIcon} from "@/entit
 import type {CountryDetailsData} from "@/entities/country/model/types.ts";
 import s from './CountryDetails.module.scss';
 
-
 type CountryDetailsProps = {
     countryDetails: CountryDetailsData;
 }

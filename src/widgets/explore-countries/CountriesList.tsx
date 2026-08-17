@@ -44,7 +44,7 @@ export const CountriesList = ({region, setMass}: CountriesListProps) => {
             .map((item) => ({
                 latitude: item.latitude,
                 longitude: item.longitude,
-                name: item.name
+                name: item.name,
             }))
     }, [coordinateQueries])
 
@@ -58,7 +58,6 @@ export const CountriesList = ({region, setMass}: CountriesListProps) => {
             })
         }
     }, [massCoordinate, setMass])
-
 
     if (isCountriesLoading || isCoordinateLoading) return <p>Loading...</p>
     if (isCountriesError || isCoordinateError) return <p>Failed to load countries</p>

@@ -1,22 +1,42 @@
-import {type ReactNode, useState} from "react";
 import {Button} from "@/shared/ui/button";
-import s from './Input.module.scss';
+import s from "./Input.module.scss";
+import type {InputHTMLAttributes, KeyboardEvent, ReactNode} from "react";
 
-type InputProps = {
-    className?: string
-    placeholder: string
-    icon?: ReactNode
-    value?: string
-    enterVal: (val: string) => void
-    disabled?: boolean
-}
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+    icon?: ReactNode;
+    enterVal: (val: string) => void;
+    onChangeVal?: (value: string) => void;
+    onClose?: () => void;
+};
 
-export const Input = ({placeholder, icon, value, enterVal, disabled}: InputProps) => {
-
-    const [stateValue, setStateValue] = useState(value || '');
-
+export const Input = ({
+                          placeholder,
+                          icon,
+                          value = "",
+                          enterVal,
+                          disabled,
+                          onFocus,
+                          onChangeVal,
+                          onClose,
+                          onKeyDown,
+                          className,
+                          ...rest
+                      }: InputProps) => {
     const submitValue = () => {
-        enterVal(stateValue);
+        enterVal(String(value));
+    };
+
+    const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Escape") {
+            onClose?.();
+            return;
+        }
+
+        onKeyDown?.(e);
+
+        if (e.key === "Enter" && !e.defaultPrevented) {
+            submitValue();
+        }
     };
 
     return (
@@ -24,20 +44,18 @@ export const Input = ({placeholder, icon, value, enterVal, disabled}: InputProps
             <Button className={s.iconInput} onClick={submitValue}>
                 {icon ? <span>{icon}</span> : null}
             </Button>
+
             <input
-                className={s.input}
+                {...rest}
+                onFocus={onFocus}
+                className={className ?? s.input}
                 placeholder={placeholder}
                 type="text"
-                value={stateValue}
-                onChange={(e) => setStateValue(e.target.value)}
-                onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
-                        submitValue();
-                    }
-                }}
+                value={value}
+                onChange={(e) => onChangeVal?.(e.target.value)}
+                onKeyDown={handleKeyDown}
                 disabled={disabled}
             />
         </div>
     );
 };
-
