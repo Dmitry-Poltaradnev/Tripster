@@ -75,16 +75,19 @@ test.beforeEach(async ({page}) => {
     });
 });
 
-test("explore shows suggestions and navigates by mouse", async ({page}) => {
+test("explore shows suggestions and navigates by mouse", async ({ page }) => {
     await page.goto("/explore");
+    await page.waitForLoadState("domcontentloaded");
 
     const input = page.getByPlaceholder("Search countries...");
+    await expect(input).toBeVisible();
+
     await input.fill("jo");
 
     await expect(page.getByRole("listbox")).toBeVisible();
-    await expect(page.getByRole("option", {name: "Jordan"})).toBeVisible();
+    await expect(page.getByRole("option", { name: "Jordan" })).toBeVisible();
 
-    await page.getByRole("option", {name: "Jordan"}).dispatchEvent("mousedown");
+    await page.getByRole("option", { name: "Jordan" }).dispatchEvent("mousedown");
 
     await expect(page).toHaveURL(/\/country\/Jordan$/);
 });
