@@ -1,22 +1,40 @@
 import {test, expect} from "@playwright/test";
 
 test.beforeEach(async ({page}) => {
-    await page.route("**/api/countries/**", async (route) => {
+    await page.route("**https://countries.dev/region/**", async (route) => {
         await route.fulfill({
             status: 200,
             contentType: "application/json",
             body: JSON.stringify([
-                {name: "Japan", alpha3Code: "JPN"},
-                {name: "Jordan", alpha3Code: "JOR"},
-                {name: "Germany", alpha3Code: "DEU"},
+                {
+                    name: "Japan",
+                    alpha3Code: "JPN",
+                    region: "Asia",
+                    population: 125800000,
+                    flags: {svg: "https://example.com/japan.svg"},
+                },
+                {
+                    name: "Jordan",
+                    alpha3Code: "JOR",
+                    region: "Asia",
+                    population: 11200000,
+                    flags: {svg: "https://example.com/jordan.svg"},
+                },
+                {
+                    name: "Germany",
+                    alpha3Code: "DEU",
+                    region: "Europe",
+                    population: 83200000,
+                    flags: {svg: "https://example.com/germany.svg"},
+                },
             ]),
         });
     });
 
-    await page.route("**/api/**coordinates**", async (route) => {
+    await page.route("**https://geocoding-api.open-meteo.com/v1/search?**", async (route) => {
         const url = route.request().url();
 
-        if (url.includes("Japan")) {
+        if (url.includes("name=Japan")) {
             await route.fulfill({
                 status: 200,
                 contentType: "application/json",
@@ -27,7 +45,7 @@ test.beforeEach(async ({page}) => {
             return;
         }
 
-        if (url.includes("Jordan")) {
+        if (url.includes("name=Jordan")) {
             await route.fulfill({
                 status: 200,
                 contentType: "application/json",
@@ -38,7 +56,7 @@ test.beforeEach(async ({page}) => {
             return;
         }
 
-        if (url.includes("Germany")) {
+        if (url.includes("name=Germany")) {
             await route.fulfill({
                 status: 200,
                 contentType: "application/json",
@@ -49,7 +67,11 @@ test.beforeEach(async ({page}) => {
             return;
         }
 
-        await route.continue();
+        await route.fulfill({
+            status: 200,
+            contentType: "application/json",
+            body: JSON.stringify({results: []}),
+        });
     });
 });
 
@@ -60,9 +82,9 @@ test("explore shows suggestions and navigates by mouse", async ({page}) => {
     await input.fill("jo");
 
     await expect(page.getByRole("listbox")).toBeVisible();
-    await expect(page.getByText("Jordan")).toBeVisible();
+    await expect(page.getByRole("option", {name: "Jordan"})).toBeVisible();
 
-    await page.getByText("Jordan").click();
+    await page.getByRole("option", {name: "Jordan"}).dispatchEvent("mousedown");
 
     await expect(page).toHaveURL(/\/country\/Jordan$/);
 });

@@ -41,7 +41,7 @@ export const Input = ({
 
     return (
         <div className={s.inputWrapper}>
-            <Button className={s.iconInput} onClick={submitValue}>
+            <Button aria-label="Search" className={s.iconInput} onClick={submitValue}>
                 {icon ? <span>{icon}</span> : null}
             </Button>
 

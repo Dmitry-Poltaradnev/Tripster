@@ -16,7 +16,7 @@ test("home search navigates on search button click", async ({page}) => {
     const input = page.getByPlaceholder("Search countries...");
     await input.fill("Japan");
 
-    await page.getByRole("button").click();
+    await page.getByRole("button", { name: "Search" }).click();
 
     await expect(page).toHaveURL(/\/country\/japan$/);
 });
