@@ -8,7 +8,9 @@
     ],
     "module": "esnext",
     "types": [
-      "vite/client"
+      "vite/client",
+      "vitest/globals",
+      "@testing-library/jest-dom"
     ],
     "skipLibCheck": true,
     "baseUrl": ".",
@@ -29,6 +31,8 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src"
+    "src",
+    "node_modules/.pnpm/vitest@4.1.10_@types+node@2_06fe6994c504d0faec61f658630ce5da/node_modules/vitest/globals.d.ts",
+    "tests"
   ]
 }

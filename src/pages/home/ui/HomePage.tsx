@@ -12,7 +12,7 @@ export const HomePage = () => {
 
     const searchCountry = (val: string) => {
         const fixedValue = val.trim().toLowerCase();
-
+        if (!fixedValue) return
         navigate(`/country/${encodeURIComponent(fixedValue)}`);
     }
 
