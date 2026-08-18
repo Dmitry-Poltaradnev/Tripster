@@ -54,7 +54,7 @@ test.beforeEach(async ({page}) => {
 });
 
 test("explore shows suggestions and navigates by mouse", async ({page}) => {
-    await page.goto("http://127.0.0.1:4173/explore");
+    await page.goto("/explore");
 
     const input = page.getByPlaceholder("Search countries...");
     await input.fill("jo");
@@ -68,7 +68,7 @@ test("explore shows suggestions and navigates by mouse", async ({page}) => {
 });
 
 test("explore navigates by keyboard", async ({page}) => {
-    await page.goto("http://127.0.0.1:4173/explore");
+    await page.goto("/explore");
 
     const input = page.getByPlaceholder("Search countries...");
     await input.fill("ja");
@@ -82,7 +82,7 @@ test("explore navigates by keyboard", async ({page}) => {
 });
 
 test("explore closes suggestions on Escape", async ({page}) => {
-    await page.goto("http://127.0.0.1:4173/explore");
+    await page.goto("/explore");
 
     const input = page.getByPlaceholder("Search countries...");
     await input.fill("ja");
