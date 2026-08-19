@@ -1,52 +1,57 @@
-import {MapContainer, TileLayer, Marker, Popup, useMap} from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
-import s from './SearchMap.module.scss'
+import {MapContainer, TileLayer, Marker, Popup, useMap} from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import s from "./SearchMap.module.scss";
 import {useEffect} from "react";
+import {latLngBounds} from "leaflet";
 
 type SearchMapProps = {
-    mass: { latitude: number; longitude: number, name: string }[]
-}
+    mass: { latitude: number; longitude: number; name: string }[];
+};
 
-type ChangeViewProps = {
-    center: [number, number]
-}
+type FitBoundsProps = {
+    points: [number, number][];
+};
 
-const ChangeView = ({center}: ChangeViewProps) => {
-    const map = useMap()
+const FitBounds = ({points}: FitBoundsProps) => {
+    const map = useMap();
 
     useEffect(() => {
-        map.setView(center, map.getZoom())
-    }, [center, map])
+        if (!points.length) return;
 
-    return null
-}
+        const bounds = latLngBounds(points);
+        map.fitBounds(bounds, {padding: [40, 40]});
+    }, [points, map]);
+
+    return null;
+};
 
 export const SearchMap = ({mass}: SearchMapProps) => {
+    if (!mass.length) return null;
 
-    if (!mass.length) return null
-
-    const center: [number, number] = [mass[0].latitude, mass[0].longitude]
+    const points: [number, number][] = mass.map((item) => [
+        item.latitude,
+        item.longitude,
+    ]);
 
     return (
         <div className={s.mapWrapper}>
             <MapContainer
-                center={center}
-                zoom={6}
+                center={points[0]}
+                zoom={2}
                 scrollWheelZoom={true}
                 className={s.map}
             >
-                <ChangeView center={center}/>
+                <FitBounds points={points}/>
                 <TileLayer
-                    attribution='&copy; OpenStreetMap contributors'
+                    attribution="&copy; OpenStreetMap contributors"
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {
-                    mass.map((item, index: number) => <Marker key={index} position={[item.latitude, item.longitude]}>
+                {mass.map((item, index) => (
+                    <Marker key={index} position={[item.latitude, item.longitude]}>
                         <Popup>{item.name}</Popup>
-                    </Marker>)
-                }
+                    </Marker>
+                ))}
             </MapContainer>
         </div>
-    )
-}
-
+    );
+};

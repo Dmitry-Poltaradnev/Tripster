@@ -9,6 +9,7 @@ import {LensIcon} from "@/shared/ui/icons";
 import type {KeyboardEvent} from "react";
 
 export const partsOfTheWorld = [
+    "All",
     "Africa",
     "Americas",
     "Asia",
