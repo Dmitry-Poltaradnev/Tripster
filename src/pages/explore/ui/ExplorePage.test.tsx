@@ -1,7 +1,7 @@
 import {fireEvent, render, screen} from "@testing-library/react";
 import {MemoryRouter} from "react-router-dom";
 import {beforeEach, describe, expect, it, vi} from "vitest";
-import {ExplorePage} from "./ExplorePage";
+import {ExplorePage, partsOfTheWorld} from "./ExplorePage";
 import {useEffect} from "react";
 
 const navigateMock = vi.fn();
@@ -187,10 +187,14 @@ describe("ExplorePage", () => {
             </MemoryRouter>
         );
 
-        expect(screen.getByText("Countries list stub: Africa")).toBeInTheDocument();
+        expect(
+            screen.getByText(`Countries list stub: ${partsOfTheWorld[0]}`)
+        ).toBeInTheDocument();
 
         fireEvent.click(screen.getByText("Change region"));
 
-        expect(screen.getByText("Countries list stub: Americas")).toBeInTheDocument();
+        expect(
+            screen.getByText(`Countries list stub: ${partsOfTheWorld[1]}`)
+        ).toBeInTheDocument();
     });
 });
