@@ -7,5 +7,7 @@ export const useCountriesRegionQuery = (region: string) => {
         queryKey: ['countriesByRegion', region],
         queryFn: () => getCountriesByRegion(region),
         enabled: Boolean(region),
+        staleTime: Infinity,
+        gcTime: 1000 * 60 * 60,
     })
 }

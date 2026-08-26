@@ -28,5 +28,6 @@ export type DestinationType = {
     "callingCodes": string[],
     "topLevelDomain": string[],
     "borders": string[],
-    "flags": FlagsType
+    "flags": FlagsType,
+    "latlng"?: [number, number];
 };

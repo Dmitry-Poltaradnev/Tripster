@@ -6,6 +6,8 @@ import {latLngBounds} from "leaflet";
 
 type SearchMapProps = {
     mass: { latitude: number; longitude: number; name: string }[];
+    zoomMap?: number
+    classNames?: string[]
 };
 
 type FitBoundsProps = {
@@ -25,7 +27,7 @@ const FitBounds = ({points}: FitBoundsProps) => {
     return null;
 };
 
-export const SearchMap = ({mass}: SearchMapProps) => {
+export const SearchMap = ({mass, zoomMap, classNames}: SearchMapProps) => {
     if (!mass.length) return null;
 
     const points: [number, number][] = mass.map((item) => [
@@ -34,14 +36,14 @@ export const SearchMap = ({mass}: SearchMapProps) => {
     ]);
 
     return (
-        <div className={s.mapWrapper}>
+        <div className={classNames?.[0] ?? s.mapWrapper}>
             <MapContainer
                 center={points[0]}
-                zoom={2}
+                zoom={zoomMap ?? 2}
                 scrollWheelZoom={true}
-                className={s.map}
+                className={classNames?.[1] ?? s.map}
             >
-                <FitBounds points={points}/>
+                {zoomMap == null && points.length > 1 && <FitBounds points={points}/>}
                 <TileLayer
                     attribution="&copy; OpenStreetMap contributors"
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

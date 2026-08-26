@@ -12,6 +12,8 @@ export const usePopularDestinationsQuery = () => {
                 getPopularCountries(),
                 getPopularCountries(),
                 getPopularCountries(),
+                getPopularCountries(),
+                getPopularCountries(),
             ]);
 
             return await Promise.all(
