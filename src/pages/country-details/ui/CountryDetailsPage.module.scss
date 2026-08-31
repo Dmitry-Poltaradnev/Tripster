@@ -9,13 +9,6 @@
   padding: 0 15px;
 }
 
-.countryDetails {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .countryInfoWrapper {
   margin: 30px 0;
   display: flex;
@@ -24,11 +17,10 @@
 }
 
 .countryDetailMap {
-  width: 95%;
+  width: 97%;
   height: 30vh;
   border-radius: 12px;
   overflow: hidden;
-  margin-top: 45px;
 }
 
 .countryDetailMapWrap {

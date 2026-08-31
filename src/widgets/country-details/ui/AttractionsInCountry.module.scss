@@ -1,0 +1,17 @@
+.sectionTitle {
+  font-family: var(--font-family), sans-serif;
+  font-weight: var(--font-weight-medium-pl);
+  font-size: var(--font-size-main);
+  color: var(--color-text-secondary);
+  line-height: 133%;
+  letter-spacing: 0.1em;
+}
+
+.attractionItemsWrapper {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+
+

@@ -15,6 +15,14 @@ export const CountryForecast = ({countryDetails}: CountryForecastProps) => {
 
     const {data, isLoading, isError} = res;
 
+    const today = new Date()
+
+    const actualDay = [
+        today.getFullYear(),
+        String(today.getMonth() + 1).padStart(2, '0'),
+        String(today.getDate()).padStart(2, '0'),
+    ].join('-');
+
     return (
         <div className={s.countryForecast}>
             <p className={s.countryForecastTitle}>{`7-DAY FORECAST · ${country.name}`}</p>
@@ -22,8 +30,8 @@ export const CountryForecast = ({countryDetails}: CountryForecastProps) => {
             {isError && <p>Error loading weather forecast.</p>}
             {data && (
                 <div className={s.forecastCardsContainer}>
-                    {data.daily.time.map((_: any, index: number) => (
-                        <ForecastDayCard key={index} day={data.daily} index={index}/>
+                    {data.daily.time.map((date: any, index: number) => (
+                        <ForecastDayCard key={date} day={data.daily} index={index} active={date === actualDay}/>
                     ))}
                 </div>
             )}

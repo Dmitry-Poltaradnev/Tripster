@@ -1,0 +1,63 @@
+.attractionCardWrapper {
+  background: var(--color-bg-transparent);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 12px;
+  width: 97%;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.attractionCardTitle {
+  font-family: var(--font-family), sans-serif;
+  font-weight: var(--font-weight-medium-pl);
+  font-size: var(--font-size-main);
+  color: var(--color-text-primary);
+  line-height: 125%;
+  margin-bottom: 10px;
+}
+
+.attractionCardInfo {
+  font-family: var(--font-family), sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  line-height: 163%;
+}
+
+.linkBtn {
+  color: var(--color-bg-accent);
+  background: var(--color-bg-secondary);
+  border-radius: 8px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.5s;
+  align-self: flex-start;
+}
+
+.linkBtn:hover {
+  background: var(--color-bg-accent);
+  color: var(--color-bg-secondary);
+}
+
+.linkIcon {
+  color: currentColor;
+}
+
+.attractionCardImage {
+  border-radius: 10px;
+  width: 56px;
+  height: 56px;
+}
+
+.attractionCardInfoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}

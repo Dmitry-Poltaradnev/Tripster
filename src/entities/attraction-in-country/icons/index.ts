@@ -1,0 +1,1 @@
+export {LincIcon} from './LincIcon.tsx'

@@ -6,6 +6,7 @@ import {CountryForecast} from "@/widgets/country-forecast/ui/CountryForecast.tsx
 import {BorderCountriesSection} from "@/widgets/country-details/ui/BorderCountriesSection.tsx";
 import {useParams} from "react-router-dom";
 import {SearchMap} from "@/widgets/explore-map/SearchMap.tsx";
+import {AttractionsInCountrySection} from "@/widgets/country-details";
 
 export const CountryDetailsPage = () => {
 
@@ -41,6 +42,7 @@ export const CountryDetailsPage = () => {
                                        classNames={[s.countryDetailMapWrap, s.countryDetailMap]}/>
                             <CountryForecast countryDetails={data}/>
                             <BorderCountriesSection countryDetails={data.country}/>
+                            <AttractionsInCountrySection/>
                         </div>
                     </div>
                 </>

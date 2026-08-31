@@ -1,6 +1,4 @@
 .ForecastDayCard {
-  border: 1px solid var(--color-border);
-  background: var(--color-bg-transparent);
   border-radius: 15px;
   padding: 12px;
   width: 52px;
@@ -17,7 +15,6 @@
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-small);
   line-height: 150%;
-  color: var(--color-text-secondary);
 }
 
 .maxTemp {
@@ -34,4 +31,16 @@
   font-size: var(--font-size-small);
   line-height: 150%;
   color: var(--color-text-primary);
+}
+
+.activeCard {
+  background: var(--color-bg-accent);
+  border: 1px solid var(--color-bg-accent);
+  color: var(--color-white);
+}
+
+.nonActiveCard {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-transparent);
+  color: var(--color-text-secondary);
 }
