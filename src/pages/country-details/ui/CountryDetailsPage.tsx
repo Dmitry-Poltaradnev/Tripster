@@ -7,6 +7,7 @@ import {BorderCountriesSection} from "@/widgets/country-details/ui/BorderCountri
 import {useParams} from "react-router-dom";
 import {SearchMap} from "@/widgets/explore-map/SearchMap.tsx";
 import {AttractionsInCountrySection} from "@/widgets/country-details";
+import {Button} from "@/shared/ui/button";
 
 export const CountryDetailsPage = () => {
 
@@ -14,7 +15,12 @@ export const CountryDetailsPage = () => {
 
     const {data, isLoading, isError} = useCountryDetailsQuery(countryName || '');
     const country = data?.country;
-    console.log(country)
+
+    // ====
+    const addTrip = (title: string) => {
+        console.log(`Trip to ${title} added!`);
+    };
+    // ====
 
     const countryMapInfo =
         country?.latlng && country.latlng.length === 2
@@ -26,7 +32,6 @@ export const CountryDetailsPage = () => {
                 },
             ]
             : [];
-
 
     return (
         <div className={s.countryDetailsPage}>
@@ -42,7 +47,14 @@ export const CountryDetailsPage = () => {
                                        classNames={[s.countryDetailMapWrap, s.countryDetailMap]}/>
                             <CountryForecast countryDetails={data}/>
                             <BorderCountriesSection countryDetails={data.country}/>
-                            <AttractionsInCountrySection/>
+                            <AttractionsInCountrySection countryTitle={data.country.name}/>
+                            <Button
+                                className={s.exploreButton}
+                                type="button"
+                                onClick={() => addTrip(data.country.name)}
+                            >
+                                + Add trip
+                            </Button>
                         </div>
                     </div>
                 </>

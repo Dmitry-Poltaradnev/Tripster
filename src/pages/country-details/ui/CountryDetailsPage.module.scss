@@ -26,3 +26,19 @@
 .countryDetailMapWrap {
   border: none;
 }
+
+.exploreButton {
+  border-radius: 16px;
+  padding: 16px 0;
+  width: 97%;
+  height: 56px;
+  background: var(--color-bg-accent);
+
+  font-family: var(--second-family), sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-medium);
+  line-height: 150%;
+  letter-spacing: 0.07em;
+  text-align: center;
+  color: var(--color-white);
+}
