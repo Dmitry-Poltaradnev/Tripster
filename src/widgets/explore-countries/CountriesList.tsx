@@ -16,12 +16,15 @@ type CountriesListProps = {
     setMass: Dispatch<SetStateAction<CoordinateItem[]>>
 }
 
+const EMPTY_COUNTRIES: DestinationType[] = []
+
 export const CountriesList = ({region, setMass}: CountriesListProps) => {
     const {
-        data: countries = [],
+        data,
         isLoading: isCountriesLoading,
         isError: isCountriesError,
     } = useCountriesRegionQuery(region)
+    const countries = data ?? EMPTY_COUNTRIES
 
     const massCoordinate = useMemo(() => {
         return countries

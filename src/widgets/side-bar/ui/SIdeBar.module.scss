@@ -1,5 +1,7 @@
 .sideBarContentWrapper {
   display: flex;
-  margin: 25px 25px 0;
   flex-direction: column;
+  height: 95%;
+  margin: 25px;
+  justify-content: space-between;
 }

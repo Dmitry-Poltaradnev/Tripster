@@ -1,0 +1,27 @@
+.sideBarFooter {
+  border: 1px solid rgba(45, 212, 191, 0.15);
+  background: rgba(45, 212, 191, 0.1);
+  border-radius: 16px;
+  padding: 16px;
+  width: 195px;
+  height: 82px;
+}
+
+.footerTitle {
+  font-family: var(--third-family), sans-serif;
+  font-weight: var(--font-weight-medium-pl);
+  font-size: var(--font-size-small);
+  color: var(--color-sidebar);
+  line-height: 133%;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.footerLink {
+  font-family: var(--second-family), sans-serif;
+  font-weight: var(--font-weight-medium-pl);
+  font-size: var(--font-size-small);
+  color: var(--color-sidebar);
+  line-height: 133%;
+  text-align: center;
+}
