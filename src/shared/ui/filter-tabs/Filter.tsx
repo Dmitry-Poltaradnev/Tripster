@@ -6,9 +6,10 @@ import {Button} from "@/shared/ui/button";
 type FilterPropsType = {
     valueMass: string[],
     onChangeValue: (filterVal: string) => void
+    className?: string
 }
 
-export const Filter = ({valueMass, onChangeValue}: FilterPropsType) => {
+export const Filter = ({valueMass, onChangeValue, className}: FilterPropsType) => {
 
     const [trip, setTrip] = useState(valueMass[0])
 
@@ -18,7 +19,7 @@ export const Filter = ({valueMass, onChangeValue}: FilterPropsType) => {
     }
 
     return (
-        <ul className={s.myTripsTypeList}>
+        <ul className={clsx(s.myTripsTypeList, className)}>
             {valueMass?.map((filterVal: string, index: number) =>
                 <li key={filterVal}>
                     <Button onClick={() => changeFilter(filterVal)}

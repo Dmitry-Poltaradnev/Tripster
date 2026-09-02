@@ -10,8 +10,11 @@ type TripFormProps = {
 }
 
 export const TripForm = ({onClose}: TripFormProps) => {
+
     const [title, setTitle] = useState('')
+
     const [startDate, setStartDate] = useState('')
+
     const [endDate, setEndDate] = useState('')
 
     const isFormValid = title.trim() !== '' && startDate !== '' && endDate !== ''

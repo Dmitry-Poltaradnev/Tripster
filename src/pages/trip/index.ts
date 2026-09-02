@@ -1,1 +1,0 @@
-export {MyTrip} from './ui/MyTrip.tsx'

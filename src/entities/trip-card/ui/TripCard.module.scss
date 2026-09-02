@@ -1,11 +1,8 @@
 .tripCardWrapper {
   border: 2px solid var(--color-border);
+  background: var(--color-bg-transparent);
   border-radius: 15px;
-  width: 240px;
-  height: 146px;
   display: flex;
-  flex-direction: column;
-  justify-content: end;
 }
 
 .tripCardInfo {
@@ -16,7 +13,6 @@
 }
 
 .tripCardFooter {
-  background-color: var(--color-bg-sidebar);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   display: flex;
@@ -25,20 +21,33 @@
   padding: 8px 12px;
 }
 
+//======
 .tripCardTitle {
-  font-family: var(--third-family) serif;
+  font-family: var(--font-family), sans-serif;
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-main);
-  color: var(--color-white);
+  line-height: 143%;
+  color: var(--color-text-primary);
 }
 
-.tripCardDates {
-  font-family: var(--font-family) sans-serif;
-  font-weight: var(--font-weight-light);
+.tripDuration {
+  font-family: var(--font-family), sans-serif;
+  color: var(--color-text-secondary);
   font-size: var(--font-size-small);
-  line-height: 150%;
-  color: rgba(255, 255, 255, 0.45);
+  font-weight: var(--font-weight-medium);
+  line-height: 133%;
+
 }
+.tripCardDates {
+  font-family: var(--font-family), sans-serif;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  line-height: 133%;
+}
+//======
+
+
 
 .tripCardDescription {
   display: flex;

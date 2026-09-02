@@ -4,7 +4,6 @@ export const ROUTES = {
     country: '/country/:countryName',
     trips: '/trips',
     myTrips: '/my-trips',
-    trip: '/trip/:id'
 } as const
 
 export const getTripRoute = (id: string) => `/trip/${id}`
