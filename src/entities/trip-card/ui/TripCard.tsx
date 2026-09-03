@@ -21,20 +21,24 @@ export const TripCard = ({trip}: TripCardProps) => {
 
     return (
         <div className={s.tripCardWrapper}>
-            <div className={s.tripCardInfo}>
-                <div className={s.tripCardHeader}>
-                    <p className={s.tripCardTitle}>{title}</p>
-                    <p className={clsx(s.tripStatus, s.current)}>CURRENT</p>
+            <>
+                <div className={s.tripCardInfo}>
+                    <div className={s.tripCardHeader}>
+                        <p className={s.tripCardTitle}>{title}</p>
+                        <p className={clsx(s.tripStatus, s.current)}>CURRENT</p>
+                    </div>
+                    <div className={s.tripCardInnerInfo}>
+                        <p className={s.tripCardDates}>{formatTripRange(startDate, endDate)}</p>
+                        <p className={s.tripDuration}>{trip.durationDays}d</p>
+                        <ul className={s.tripFlagsList}>
+                            <li>Flags</li>
+                            <li>Flags</li>
+                            <li>Flags</li>
+                        </ul>
+                    </div>
                 </div>
-                <div className={s.tripCardInnerInfo}>
-                    <p className={s.tripCardDates}>{formatTripRange(startDate, endDate)}</p>
-                    <p className={s.tripDuration}>{trip.durationDays}d</p>
-                    <ul>
-                        <li>Flags</li>
-                    </ul>
-                </div>
-            </div>
-            <Button onClick={() => navigate(ROUTES.myTrips)} className={s.tripCardFooter}>
+            </>
+            <Button onClick={() => navigate(ROUTES.myTrips)} className={s.tripCardBtn}>
                 <ShowIcon color="var(--color-text-secondary)"/>
             </Button>
         </div>

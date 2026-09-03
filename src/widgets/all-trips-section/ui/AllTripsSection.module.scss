@@ -1,0 +1,37 @@
+.allTripsSection {
+  border-right: 1px solid var(--color-border);
+  padding: 20px 20px 0 20px;
+}
+
+.headerFirstSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 17px 20px;
+}
+
+.myTripsPageTitle {
+  font-family: var(--third-family), sans-serif;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-middle);
+  font-weight: var(--font-weight-bold);
+  line-height: 150%;
+}
+
+.addTripBtn {
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: var(--color-bg-accent);
+  cursor: pointer;
+}
+
+.plusIcon {
+  color: var(--color-text-primary);
+}
+
+.filter {
+  margin: 15px 0;
+}

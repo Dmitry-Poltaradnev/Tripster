@@ -4,11 +4,13 @@ import {useNavigate} from "react-router-dom";
 import {ROUTES} from "@/shared/config/routes.ts";
 import {Button} from "@/shared/ui/button";
 import {TripsList} from "@/widgets/trips-list/ui/TripsList.tsx";
+import {useTripStore} from "@/entities/trip/model/store/useTripStore.ts";
 
 export const RecentTrips = () => {
 
     const navigate = useNavigate()
 
+    const trips = useTripStore((state) => state.trips)
     return (
         <>
             <div className={s.recentTripsHeader}>
@@ -18,7 +20,7 @@ export const RecentTrips = () => {
                 </Button>
             </div>
             <div className={s.recentTripsList}>
-                <TripsList/>
+                <TripsList trips={trips.slice(-2)} variant="between"/>
                 <CreateTripCard/>
             </div>
         </>

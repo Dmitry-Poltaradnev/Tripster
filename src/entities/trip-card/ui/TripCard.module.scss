@@ -2,32 +2,51 @@
   border: 2px solid var(--color-border);
   background: var(--color-bg-transparent);
   border-radius: 15px;
+  width: 80%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .tripCardInfo {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 10px 10px 10px 40px;
   gap: 15px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    top: 50%;
+    right: 10px;
+    left: 15px;
+    transform: translateY(-50%);
+    background: var(--color-sidebar);
+    width: 5px;
+    height: 36px;
+    border-radius: 5px;
+  }
 }
 
-.tripCardFooter {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+.tripFlagsList {
   display: flex;
-  justify-content: space-between;
+  gap: 5px;
   align-items: center;
-  padding: 8px 12px;
+  justify-content: center;
 }
 
-//======
+.tripCardBtn {
+  padding: 12px;
+}
+
 .tripCardTitle {
   font-family: var(--font-family), sans-serif;
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-main);
-  line-height: 143%;
   color: var(--color-text-primary);
+  line-height: 143%;
 }
 
 .tripDuration {
@@ -36,8 +55,8 @@
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-medium);
   line-height: 133%;
-
 }
+
 .tripCardDates {
   font-family: var(--font-family), sans-serif;
   color: var(--color-text-secondary);
@@ -45,22 +64,12 @@
   font-weight: var(--font-weight-medium);
   line-height: 133%;
 }
-//======
 
-
-
-.tripCardDescription {
+.tripCardInnerInfo {
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.tripCardDescription p {
-  font-family: var(--font-family), sans-serif;
-  font-weight: var(--font-weight-light);
-  font-size: var(--font-size-main);
-  line-height: 133%;
-  color: var(--color-text-secondary);
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .tripStatus {
@@ -92,7 +101,7 @@
 
 .tripCardHeader {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
 }
 
 

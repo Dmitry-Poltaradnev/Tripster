@@ -1,7 +1,12 @@
 .tripsListWrapper {
   display: flex;
-  gap: 12px;
+  gap: 10px;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.between {
   justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
 }

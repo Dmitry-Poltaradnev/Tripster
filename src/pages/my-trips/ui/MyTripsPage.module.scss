@@ -22,52 +22,12 @@
   animation: modalDropIn 0.35s ease;
 }
 
-//=====
 .tripsPageContent {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
-.allTripsSection {
-  border-right: 1px solid var(--color-border);
-}
-
-.myTripsPageTitle {
-  font-family: var(--third-family), sans-serif;
-  color: var(--color-text-primary);
-  font-size: var(--font-size-middle);
-  font-weight: var(--font-weight-bold);
-  line-height: 150%;
-}
-
-.plusIcon {
-  color: var(--color-text-primary);
-}
-
-.addTripBtn {
-  border-radius: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background: var(--color-bg-accent);
-  cursor: pointer;
-}
-
-.headerFirstSection {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 17px 20px;
-}
-
-.filter {
-  margin: 15px 0;
-}
-
-
-//====
 @keyframes modalDropIn {
   0% {
     opacity: 0;
