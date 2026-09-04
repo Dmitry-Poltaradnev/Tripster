@@ -11,6 +11,7 @@ export const RecentTrips = () => {
     const navigate = useNavigate()
 
     const trips = useTripStore((state) => state.trips)
+
     return (
         <>
             <div className={s.recentTripsHeader}>

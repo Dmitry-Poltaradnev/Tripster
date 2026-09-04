@@ -2,11 +2,11 @@ import s from './SelectedTripSection.module.scss';
 import {Button} from "@/shared/ui/button";
 import {ThreeDotIcon} from "@/shared/ui/icons/ThreeDotIcon.tsx";
 
-type SelectedTripSectionProps = {
-    setModalState: (state: boolean) => void;
-};
+// type SelectedTripSectionProps = {
+//     // setModalState: (state: boolean) => void;
+// };
 
-export const SelectedTripSection = ({setModalState}: SelectedTripSectionProps) => {
+export const SelectedTripSection = () => {
     return (
         <div className={s.selectedTripSection}>
             <div className={s.tripSectionHeader}>
@@ -45,7 +45,7 @@ export const SelectedTripSection = ({setModalState}: SelectedTripSectionProps) =
             <div className={s.currentTrip}>
                 Card
             </div>
-            <Button onClick={() => setModalState(true)} className={s.addCountryBtn}>
+            <Button onClick={() => console.log('Add country')} className={s.addCountryBtn}>
                 + Add country
             </Button>
         </div>

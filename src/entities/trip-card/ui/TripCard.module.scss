@@ -8,6 +8,11 @@
   align-items: center;
 }
 
+.tripCardHeader {
+  display: flex;
+  gap: 10px;
+}
+
 .tripCardInfo {
   display: flex;
   flex-direction: column;
@@ -18,15 +23,24 @@
   &::before {
     content: '';
     position: absolute;
-    inset: 0;
     top: 50%;
-    right: 10px;
     left: 15px;
     transform: translateY(-50%);
-    background: var(--color-sidebar);
     width: 5px;
     height: 36px;
     border-radius: 5px;
+  }
+
+  &.current::before {
+    background-color: #fbbf24;
+  }
+
+  &.past::before {
+    background-color: #9590be;
+  }
+
+  &.upcoming::before {
+    background-color: #2dd4bf;
   }
 }
 
@@ -82,26 +96,26 @@
   width: 60px;
   height: 20px;
   text-align: center;
+
+  &.current {
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.12);
+  }
+
+  &.past {
+    color: #9590be;
+    background: rgba(149, 144, 190, 0.12);
+  }
+
+  &.upcoming {
+    color: #2dd4bf;
+    background: rgba(45, 212, 191, 0.12);
+  }
 }
 
-.current {
-  color: #fbbf24;
-  background: rgba(251, 191, 36, 0.12);
-}
 
-.past {
-  color: #9590be;
-  background: rgba(149, 144, 190, 0.12);
-}
 
-.upcoming {
-  color: #2dd4bf;
-  background: rgba(45, 212, 191, 0.12);
-}
 
-.tripCardHeader {
-  display: flex;
-  gap: 10px;
-}
+
 
 

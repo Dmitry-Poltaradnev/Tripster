@@ -49,8 +49,8 @@ export const MyTripsPage = () => {
                 {trips.length === 0 ?
                     <EmptyTripsList openModal={() => setModalState(true)}/> :
                     <div className={s.tripsPageContent}>
-                        <AllTripsSection/>
-                        <SelectedTripSection setModalState={setModalState}/>
+                        <AllTripsSection setModalState={setModalState}/>
+                        <SelectedTripSection />
                     </div>
                 }
             </div>
