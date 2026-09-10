@@ -18,17 +18,7 @@ export const AllTripsSection = ({setModalState}: AllTripsSectionProps) => {
 
     const storeTrips = useTripStore((state) => state.trips);
 
-    const [isOpen, setIsOpen] = useState(false);
     const [query, setQuery] = useState("");
-
-    const suggestions = useMemo(() => {
-        const value = query.trim().toLowerCase();
-        if (!value) return [];
-
-        return storeTrips
-            .filter((trip) => trip.title.toLowerCase().includes(value))
-            .slice(0, 5);
-    }, [storeTrips, query]);
 
     const [filterVal, setFilterVal] = useState<TripStatus | 'all'>('all')
 
@@ -68,26 +58,18 @@ export const AllTripsSection = ({setModalState}: AllTripsSectionProps) => {
                     <PlusIcon className={s.plusIcon}/>
                 </Button>
             </div>
-
             <Input
                 placeholder="Search trips..."
                 role="combobox"
-                aria-expanded={isOpen}
                 aria-autocomplete="list"
                 aria-controls="trips-suggestions"
                 icon={<LensIcon/>}
-                enterVal={() => setIsOpen(false)}
+                // enterVal={() => setIsOpen(false)}
                 value={query}
                 onChangeVal={(value) => {
                     setQuery(value);
-                    setIsOpen(true);
                 }}
-                onFocus={() => {
-                    if (suggestions.length > 0) setIsOpen(true);
-                }}
-                onClose={() => setIsOpen(false)}
             />
-
             <Filter valueMass={tripFilterVal} onChangeValue={changeFilter} className={s.filter}/>
             <TripsList trips={filteredTrips} variant="column"/>
         </div>

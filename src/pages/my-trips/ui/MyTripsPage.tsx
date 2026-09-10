@@ -6,6 +6,7 @@ import {EmptyTripsList} from "@/widgets/empty-trips-list/ui/EmptyTripsList.tsx";
 import s from './MyTripsPage.module.scss'
 import {SelectedTripSection} from "@/widgets/selected-trip-section/ui/SelectedTripSection.tsx";
 import {AllTripsSection} from "@/widgets/all-trips-section/ui/AllTripsSection.tsx";
+import {AddCountryModal} from "@/features/add-country-to-trip/ui/AddCountryModal/AddCountryModal.tsx";
 
 export const MyTripsPage = () => {
 
@@ -14,6 +15,10 @@ export const MyTripsPage = () => {
     const location = useLocation()
 
     const [modalState, setModalState] = useState(false)
+
+    // ====
+    const [addCountryModal, setAddCountryModal] = useState(false)
+    // ====
 
     useEffect(() => {
         if (location.state?.openCreateTripModal) {
@@ -39,6 +44,13 @@ export const MyTripsPage = () => {
     return (
         <div className={s.contentInner}>
             <div>
+                {addCountryModal && (
+                    <div className={s.modalOverlay}>
+                        <div className={s.modalContent} onClick={(e) => e.stopPropagation()}>
+                            <AddCountryModal onClose={() => setAddCountryModal(false)}/>
+                        </div>
+                    </div>
+                )}
                 {modalState && (
                     <div className={s.modalOverlay}>
                         <div className={s.modalContent} onClick={(e) => e.stopPropagation()}>
@@ -50,7 +62,7 @@ export const MyTripsPage = () => {
                     <EmptyTripsList openModal={() => setModalState(true)}/> :
                     <div className={s.tripsPageContent}>
                         <AllTripsSection setModalState={setModalState}/>
-                        <SelectedTripSection />
+                        <SelectedTripSection setAddCountryModal={setAddCountryModal}/>
                     </div>
                 }
             </div>

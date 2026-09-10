@@ -1,0 +1,68 @@
+.addCountryModalWrapper {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-sidebar);
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 384px;
+  height: 90%;
+}
+
+.headerModal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modalTitle {
+  font-family: var(--third-family), sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-large);
+  color: var(--color-text-primary);
+  line-height: 130%;
+  letter-spacing: 1px;
+}
+
+.closeBtn {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.closeIcon {
+  color: var(--color-text-secondary);
+}
+
+.addCountryBtn {
+  font-family: var(--font-family), sans-serif;
+  font-weight: var(--font-weight-medium-pl);
+  font-size: var(--font-size-main);
+  line-height: 143%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px;
+  border-radius: 15px;
+  gap: 10px;
+  width: 100%;
+  margin: 20px auto 0;
+}
+
+.activeItem {
+  color: var(--color-white);
+  background: var(--color-bg-accent);
+}
+
+.nonActiveItem {
+  color: var(--color-transparent-text);
+  background: var(--color-bg-secondary);
+  opacity: 0.6;
+}
+
+.itemCountryFlag {
+  width: 25px;
+}
+
+

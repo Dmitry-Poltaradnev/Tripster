@@ -4,7 +4,7 @@ import type {InputHTMLAttributes, KeyboardEvent, ReactNode} from "react";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     icon?: ReactNode;
-    enterVal: (val: string) => void;
+    enterVal?: (val: string) => void;
     onChangeVal?: (value: string) => void;
     onClose?: () => void;
 };
@@ -23,7 +23,7 @@ export const Input = ({
                           ...rest
                       }: InputProps) => {
     const submitValue = () => {
-        enterVal(String(value));
+        enterVal?.(String(value));
     };
 
     const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
