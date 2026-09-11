@@ -1,5 +1,5 @@
 import s from './BorderCountryCard.module.scss';
-import type {BorderCountryResponse} from "@/entities/country/model/queries/useCountryBordersQuery.ts";
+import type {BorderCountryResponse} from "@/entities/country/model/types.ts";
 
 type BorderCountryCardProps = {
     borderCountry: BorderCountryResponse;

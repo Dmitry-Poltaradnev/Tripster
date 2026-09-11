@@ -13,10 +13,9 @@
       "@testing-library/jest-dom"
     ],
     "skipLibCheck": true,
-    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ]
     },
     "moduleResolution": "bundler",

@@ -1,4 +1,4 @@
-import type {BorderCountryResponse} from "@/entities/country/model/queries/useCountryBordersQuery.ts";
+import type {BorderCountryResponse} from "@/entities/country/model/types.ts";
 
 export const getBorderCountryInfo = async (alfaCodeCountry: string): Promise<BorderCountryResponse> => {
     const response = await fetch(`https://countries.dev/alpha/${alfaCodeCountry}?fields=name%2Ccapital%2Cflag&full=true`);
